@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {useState} from "react";
 import $ from "jquery";
 
-import Background from "../components/Background";
 import '../CSS/login.css';
 
 function Login()
@@ -29,12 +28,37 @@ function Login()
         $.ajax
         ({
             type: "POST",
-            url: "http://localhost:8000/submit.php",
+            url: "http://localhost:8000/login.php",
             data: form.serialize(), // important to maintain the form data output
             dataType: 'json',
             success(data) {
                 setResult(data);
                 console.log(data);
+                
+                let message = document.getElementById("message");
+                message.style.display = "block";
+                message.style.opacity = "1";
+                if(data.Status === "login-true")
+                {
+                    message.innerHTML = "Login Sucessfully";
+                    message.style.backgroundColor = "rgb(6, 133, 6)";
+                    setTimeout(() =>
+                    {
+                        message.innerHTML = "";
+                        message.style.backgroundColor = "transparent";
+                        window.location.href = '/main';
+                    }, 2000);
+                }
+                else if(data.Status === "login-false")
+                {
+                    message.innerHTML = "Login Failed";
+                    message.style.backgroundColor = "rgb(175, 11, 11)";
+                    setTimeout(() =>
+                    {
+                        //reloads the browser
+                        window.location.reload();
+                    }, 2000);
+                }
             },
         });
     }
@@ -51,7 +75,7 @@ function Login()
         $.ajax
         ({
             type: "POST",
-            url: "http://localhost:8000/submit.php",
+            url: "http://localhost:8000/register.php",
             data: form.serialize(), // important to maintain the form data output
             dataType: 'json',
             success(data) {
@@ -81,16 +105,6 @@ function Login()
             return_button.style.display = "block";
         });
 
-        /* Adds the additional Register portion After clicking Proceed */
-        let proceed_button = document.getElementById("proceed");
-        let reg_portion = document.getElementById("reg-portion");
-        proceed_button.addEventListener("click", () =>
-        {
-            reg_portion.style.animation = "SlideIn 1s ease-in";
-            reg_portion.style.display = "block";
-            reg_portion.style.left = "0%";
-        });
-
         /* return button swapping of forms */
         return_button.addEventListener("click", () =>
         {
@@ -101,11 +115,6 @@ function Login()
             form1.style.display = "block";
 
             return_button.style.display = "none";
-
-            /* resets the reg_portion to default */
-            reg_portion.style.animation = "none";
-            reg_portion.style.display = "none";
-            reg_portion.style.left = "15%";
         })
         
     }, []);
@@ -113,22 +122,21 @@ function Login()
 
     return (
     <>
-    <Background />
     <div>
         <div className = 'modal1' id = "model" style = {{display: 'block'}}>
 
             <form className = 'modal-content' method = 'post' onSubmit={(event) => Login(event)} autoComplete='off' id = 'form1'>
                 <div className = 'modal-container'>
 
-                    <label style = {{fontSize: '18px'}}><b>Welcome. Please login to proceed</b></label>
+                    <label style = {{fontSize: '18px'}}><b>Welcome.</b></label>
                     <br /><br /><br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "username" value = {inputs.username || ""}  onChange = {handleChange} required></input></span>
                     <br /><br /><br />
-                    <label><b>Api Key</b></label>
+                    <label><b>Password</b></label>
                     <br />
-                    <span><input type = 'password' placeholder = "Api-Key" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
+                    <span><input type = 'password' placeholder = "password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
                     <br /><br />
                     <button className = 'button' type = 'submit'>Proceed</button> <div id = "reg" className = 'text'>Or Register</div>
                 </div>
@@ -143,22 +151,16 @@ function Login()
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "register_username" value = {inputs.register_username || ""}  onChange = {handleChange} required></input></span>
                     <br /><br /><br />
-                    <label><b>Email</b></label>
+                    <label><b>Password</b></label>
                     <br />
-                    <span><input type = 'email' placeholder = "Email" name = "register_password" value = {inputs.register_password || ""} onChange = {handleChange} required></input></span>
+                    <span><input type = 'password' placeholder = "Password" name = "register_password" value = {inputs.register_password || ""} onChange = {handleChange} required></input></span>
                     <br /><br />
-                    <button id = 'proceed' className = 'button' type = 'button'>Send Token</button>
+                    <button className = 'button' type = 'submit'>Proceed</button>
                     <br /><br />
 
-                    <div className = 'reg-portion' id = "reg-portion">
-                        <label><b>Authentication Token</b></label>
-                        <br />
-                        <span><input type = 'password' placeholder = "Enter Token" name = "authentication" value = {inputs.authentication || ""} onChange = {handleChange} required></input></span>
-                        <br /><br />
-                        <button className = 'button' type = 'submit'>Register</button>
-                    </div>
                 </div>
             </form>
+            <div className = "info-message" id = "message">{result['Status']}</div>
 
             <div className = 'return-button'></div>
         </div>

@@ -1,9 +1,10 @@
 <?php
     session_start();
     header('Access-Control-Allow-Origin: http://localhost:3000');
+    header('Access-Control-Allow-Credentials: true');
 
-    $user = $_POST['username'];
-    $key = $_POST['password'];
+    $user = $_POST['register_username'];
+    $key = $_POST['register_password'];
 
     $servername = "localhost";
     $username = "root";
@@ -19,11 +20,13 @@
 
     if(mysqli_query($conn, $query))
     {
-        echo("register-true");
+        $result = array("username"=>$user, "key"=>$key, "Status"=>"register-true");
+        echo json_encode($result);
     }
     else
     {
-        echo("register-false");
+        $result = array("username"=>$user, "key"=>$key, "Status"=>"register-false");
+        echo json_encode($result);
     }
 
 ?>
