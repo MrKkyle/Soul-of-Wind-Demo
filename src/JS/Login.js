@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import {useState} from "react";
+import $ from "jquery";
 
 import Background from "../components/Background";
 import '../CSS/login.css';
@@ -16,20 +17,97 @@ function Login()
         setInputs(values => ({...values, [name]: value}))
     }
 
+    //Login
     const Login = (event) =>
     {
         event.preventDefault();
+        const form = $(event.target);
+
+        $.ajaxSetup({ xhrFields: { withCredentials: true }, });
+
+        /* Submits the user Information */
+        $.ajax
+        ({
+            type: "POST",
+            url: "http://localhost:8000/submit.php",
+            data: form.serialize(), // important to maintain the form data output
+            dataType: 'json',
+            success(data) {
+                setResult(data);
+                console.log(data);
+            },
+        });
     }
 
+    //Register
     const Register = (event) =>
     {
         event.preventDefault();
+        const form = $(event.target);
+
+        $.ajaxSetup({ xhrFields: { withCredentials: true }, });
+
+        /* Submits the user Information */
+        $.ajax
+        ({
+            type: "POST",
+            url: "http://localhost:8000/submit.php",
+            data: form.serialize(), // important to maintain the form data output
+            dataType: 'json',
+            success(data) {
+                setResult(data);
+                console.log(data);
+            },
+        });
     }
 
 
     useEffect(()=> 
     {
+        
+        /* The swapping of forms */
+        let register_button = document.getElementById("reg");
+        let return_button = document.querySelector(".return-button");
+        let form1 = document.getElementById("form1");
+        let form2 = document.getElementById("form2");
+        register_button.addEventListener("click", () =>
+        {
+            form1.style.animation = "Fadeout ease-out 1s";
+            form1.style.display = "none";
 
+            form2.style.animation = "FadeIn ease-in 1s";
+            form2.style.display = "block";
+
+            return_button.style.display = "block";
+        });
+
+        /* Adds the additional Register portion After clicking Proceed */
+        let proceed_button = document.getElementById("proceed");
+        let reg_portion = document.getElementById("reg-portion");
+        proceed_button.addEventListener("click", () =>
+        {
+            reg_portion.style.animation = "SlideIn 1s ease-in";
+            reg_portion.style.display = "block";
+            reg_portion.style.left = "0%";
+        });
+
+        /* return button swapping of forms */
+        return_button.addEventListener("click", () =>
+        {
+            form2.style.animation = "Fadeout ease-out 1s";
+            form2.style.display = "none";
+
+            form1.style.animation = "FadeIn ease-in 1s";
+            form1.style.display = "block";
+
+            return_button.style.display = "none";
+
+            /* resets the reg_portion to default */
+            reg_portion.style.animation = "none";
+            reg_portion.style.display = "none";
+            reg_portion.style.left = "15%";
+        })
+        
     }, []);
 
 
