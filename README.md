@@ -12,3 +12,15 @@
 #About
 - This application will mostly be used to demonstrate the integration of React.js and Laravel (a PHP Framework)
 - I will be using the information about the famous musicians, "Soul of Wind". I hope you enjoy it. It is, however, still under development ~
+
+#Installation for Laravel project + react
+- `composer create-project --prefer-dist laravel/laravel PROJECT_NAME --ignore-platform-req=ext-fileinfo`
+- Change package.json to include the relevant libraries
+- Redirect to the project directory and then install the libraries using `npm install`
+- Enter `composer require laravel/ui --ignore-platform-req=ext-fileinfo` in the cmd
+- Change the vite.config.js file to include reactRefreash()
+- Install jquery: `npm install jquery --legacy-peer-deps`
+- Install react route: `npm install react-router-dom --legacy-peer-deps`
+- Add workaround to vite.config,js file to allow js files to be used and not only jsx for react.
+- Start the servers: npm run dev, php artisan serve --port=8000 separately, both needs to be run
+
