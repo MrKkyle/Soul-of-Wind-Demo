@@ -148,7 +148,7 @@ input[type = text], input[type = password], input[type = email]
 	text-align: center;
 	font-family: monospace;
 	font-size: 12px;
-	opacity: 0;
+	opacity: 1;
 	border-radius: 5px;
 	background-color: transparent;
 	animation: fadeMessage ease-in-out 2s;

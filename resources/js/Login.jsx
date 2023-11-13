@@ -25,30 +25,55 @@ function Login()
 
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
-        /*
-        $.ajax
-        ({
-            type: "POST",
-            url: "http://localhost:8000/login",
-            data: form.serialize(), // important to maintain the form data output
-            dataType: 'json',
-            success(data) {
-                setResult(data);
-                console.log(data);
-            }, 
-        });
-        */
-
-        $.post( "http://localhost:8000/login", {action: "login", username: inputs.username, password: inputs.password})
+        /* Login */
+        $.post( "http://localhost:8000/login", {action: "login", username: inputs.username, password: inputs.password}, [],'json')
         .done(function( _data) 
         {
             console.log(_data);
+
+            /* configure message */
+            let message = document.getElementById("message");
+            let login_form = document.getElementById("form1");
+            message.style.display = "block";
+            message.innerHTML = "Login Sucessfully";
+            message.style.backgroundColor = "rgb(6, 133, 6)";
+            setTimeout(() =>
+            {
+                message.innerHTML = "";
+                message.style.backgroundColor = "transparent";
+                login_form.style.animation = "Fadeout ease-out 0.5s";
+                setTimeout(() =>
+                {
+                    login_form.style.display = "none";
+                    login_form.style.opacity = "0";
+                }, 500);
+            }, 2000);
+            
+        })
+        .fail( function(xhr) 
+        { 
+            alert(xhr.responseText);
+            /* configure message */
+            let message = document.getElementById("message");
+            message.style.display = "block";
+            message.innerHTML = "Login Failed";
+            message.style.backgroundColor = "rgb(175, 11, 11)";
+            setTimeout(() =>
+            {
+                message.innerHTML = "";
+                message.style.backgroundColor = "transparent";
+            }, 2000);
         });
-    
+
+        /* Set session variables */
         $.post( "http://localhost:8000/session_variables", {action: "login"})
         .done(function( _data) 
         {
             console.log(_data);
+        })
+        .fail( function(xhr) 
+        { 
+            alert(xhr.responseText)
         });
     }
 
@@ -58,57 +83,64 @@ function Login()
         event.preventDefault();
         const form = $(event.target);
 
-        $.ajaxSetup({ 
-            xhrFields: { withCredentials: true }, 
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
-        });
+        $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
         /* Submits the user Information */
-        $.ajax
-        ({
-            type: "POST",
-            url: "http://localhost:8000/register",
-            data: form.serialize(), // important to maintain the form data output
-            dataType: 'json',
-            success(data) {
-                setResult(data);
-                console.log(data);
-                let message = document.getElementById("message");
-                let register_form = document.getElementById("form2");
-                if(message.innerHTML !== "")
+        $.post( "http://localhost:8000/register",{register_username: inputs.register_username, register_password: inputs.register_password}, [],'json')
+        .done(function( _data) 
+        {
+            setResult(_data);
+            console.log(_data);
+            let message = document.getElementById("message");
+            let register_form = document.getElementById("form2");
+            let login_form = document.getElementById("form1");
+            
+            /* configure message */
+            message.style.display = "block";
+            message.innerHTML = "Registered Sucessfully";
+            message.style.backgroundColor = "rgb(6, 133, 6)";
+            setTimeout(() =>
+            {
+                message.innerHTML = "";
+                message.style.backgroundColor = "transparent";
+                register_form.style.animation = "Fadeout ease-out 0.5s";
+                setTimeout(() =>
                 {
-                    message.style.display = "block";
-                    if(message.innerHTML === "register-true")
-                    {
-                        message.innerHTML = "Registered Sucessfully";
-                        message.style.backgroundColor = "rgb(6, 133, 6)";
-                        setTimeout(() =>
-                        {
-                            register_form.style.animation = "Fadeout ease-out 1s";
-                            register_form.style.display = "none";
-                            redirect_main.style.display = "block";
-                        
-                        }, 1000);
-                    }
-                    else if(message.innerHTML === "register-false")
-                    {
-                        message.innerHTML = "Registration Failed";
-                        message.style.backgroundColor = "rgb(175, 11, 11)";
-                        setTimeout(() =>
-                        {
-                            //reloads the browser
-                            window.location.reload();
-                        }, 2000);
-                    }
-                }
-            },
+                    register_form.style.display = "none";
+                    register_form.style.opacity = "0";
+
+                    login_form.style.display = "block";
+                    login_form.style.opacity = "1";
+                }, 500);
+            }, 2000);
+        })
+        .fail( function(xhr) 
+        { 
+            console.log(xhr.responseText);
+            let message = document.getElementById("message");
+            /* configure message */
+            message.style.display = "block";
+            message.innerHTML = "Registered Failed";
+            message.style.backgroundColor = "rgb(175, 11, 11)";
+            setTimeout(() =>
+            {
+                message.innerHTML = "";
+                message.style.backgroundColor = "transparent";
+            }, 2000);
         });
     }
 
 
     useEffect(()=> 
     {
-        
+        $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+
+        $.post( "http://localhost:8000/session_variables", {action: "validate"})
+        .done(function( _data) 
+        {
+            console.log(_data);
+        });
+
         /* The swapping of forms */
         let register_button = document.getElementById("reg");
         let return_button = document.querySelector(".return-button");
