@@ -23,9 +23,9 @@ function Login()
         event.preventDefault();
         const form = $(event.target);
 
-        $.ajaxSetup({ xhrFields: { withCredentials: true }, });
+        $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
-        /* Submits the user Information */
+        /*
         $.ajax
         ({
             type: "POST",
@@ -35,32 +35,20 @@ function Login()
             success(data) {
                 setResult(data);
                 console.log(data);
-                
-                let message = document.getElementById("message");
-                message.style.display = "block";
-                message.style.opacity = "1";
-                if(data.Status === "login-true")
-                {
-                    message.innerHTML = "Login Sucessfully";
-                    message.style.backgroundColor = "rgb(6, 133, 6)";
-                    setTimeout(() =>
-                    {
-                        message.innerHTML = "";
-                        message.style.backgroundColor = "transparent";
-                        window.location.href = '/main';
-                    }, 2000);
-                }
-                else if(data.Status === "login-false")
-                {
-                    message.innerHTML = "Login Failed";
-                    message.style.backgroundColor = "rgb(175, 11, 11)";
-                    setTimeout(() =>
-                    {
-                        //reloads the browser
-                        window.location.reload();
-                    }, 2000);
-                }
-            },
+            }, 
+        });
+        */
+
+        $.post( "http://localhost:8000/login", {action: "login", username: inputs.username, password: inputs.password})
+        .done(function( _data) 
+        {
+            console.log(_data);
+        });
+    
+        $.post( "http://localhost:8000/session_variables", {action: "login"})
+        .done(function( _data) 
+        {
+            console.log(_data);
         });
     }
 
@@ -70,7 +58,10 @@ function Login()
         event.preventDefault();
         const form = $(event.target);
 
-        $.ajaxSetup({ xhrFields: { withCredentials: true }, });
+        $.ajaxSetup({ 
+            xhrFields: { withCredentials: true }, 
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
 
         /* Submits the user Information */
         $.ajax
@@ -82,6 +73,34 @@ function Login()
             success(data) {
                 setResult(data);
                 console.log(data);
+                let message = document.getElementById("message");
+                let register_form = document.getElementById("form2");
+                if(message.innerHTML !== "")
+                {
+                    message.style.display = "block";
+                    if(message.innerHTML === "register-true")
+                    {
+                        message.innerHTML = "Registered Sucessfully";
+                        message.style.backgroundColor = "rgb(6, 133, 6)";
+                        setTimeout(() =>
+                        {
+                            register_form.style.animation = "Fadeout ease-out 1s";
+                            register_form.style.display = "none";
+                            redirect_main.style.display = "block";
+                        
+                        }, 1000);
+                    }
+                    else if(message.innerHTML === "register-false")
+                    {
+                        message.innerHTML = "Registration Failed";
+                        message.style.backgroundColor = "rgb(175, 11, 11)";
+                        setTimeout(() =>
+                        {
+                            //reloads the browser
+                            window.location.reload();
+                        }, 2000);
+                    }
+                }
             },
         });
     }

@@ -1,35 +1,44 @@
-<html>
-    <body>
-    <?php
-        session_start();
-        header('Access-Control-Allow-Origin: http://localhost:3000');
+<?php
+    session_start();
+    header('Access-Control-Allow-Origin: http://localhost:8000');
+    header('Access-Control-Allow-Credentials: true');
 
-        $user = $_POST['username'];
-        $key = $_POST['password'];
+    if($_POST["action"] == "validate")
+    {   
+        $result = array("username"=>$_SESSION['username'], "key"=>$_SESSION['key'] , "Status"=>"validate");
+        echo json_encode($result);
+        exit();
+    }
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "api-database";
+    $user = $_POST['username'];
+    $key = $_POST['password'];
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        if($conn->connect_error)
-        {
-            die("Connection Failed: " . $conn->connect_error);
-        }
-        $query = "INSERT INTO `api-credentials` (username, passCode) VALUES ('$user', '$key')";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "api-database";
 
-        if(mysqli_query($conn, $query))
-        {
-            $result = array("username"=>$user, "key"=>$key, "Status"=>"register-true");
-            echo json_encode($result);
-        }
-        else
-        {
-            $result = array("username"=>$user, "key"=>$key, "Status"=>"register-false");
-            echo json_encode($result);
-        }
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if($conn->connect_error)
+    {
+        die("Connection Failed: " . $conn->connect_error);
+    }
 
-    ?>
-    </body>
-</html>
+    $query = mysqli_query($conn, "SELECT * FROM `api-credentials` WHERE userName = '$user' AND passCode = '$key'");
+    if(mysqli_num_rows($query) > 0)
+    {
+        $result = array("username"=>$user, "key"=>$key, "Status"=>"login-true");
+        $_SESSION['username'] = $user;
+        $_SESSION['key'] = $key;
+        echo json_encode($result);
+
+    }
+    else
+    {
+        $result = array("username"=>$user, "key"=>$key, "Status"=>"login-false");
+        $_SESSION['username'] = $user;
+        $_SESSION['key'] = $key;
+        echo json_encode($result);
+    }
+
+?>

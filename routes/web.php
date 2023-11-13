@@ -13,22 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () 
+{
     return view('welcome');
 });
 
-Route::get('register', function () {
-    return view('register');
+Route::post('register', function () 
+{
+    return view('/register');
 });
 
-Route::get('session_variables', function () {
-    return view('session_variables');
+Route::post('session_variables', function () 
+{
+    return view('/session_variables');
 });
 
-Route::get('login', function () {
-    return view('login');
+Route::post('login', function () 
+{
+    return view('/login');
 });
 
-Route::get('worker', function () {
-    return view('worker');
+Route::post('worker', function () 
+{
+    return view('/worker');
 });
