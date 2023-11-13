@@ -29,7 +29,7 @@ function Login()
         $.ajax
         ({
             type: "POST",
-            url: "http://localhost:8000/login.php",
+            url: "http://localhost:8000/login",
             data: form.serialize(), // important to maintain the form data output
             dataType: 'json',
             success(data) {
@@ -76,7 +76,7 @@ function Login()
         $.ajax
         ({
             type: "POST",
-            url: "http://localhost:8000/register.php",
+            url: "http://localhost:8000/register",
             data: form.serialize(), // important to maintain the form data output
             dataType: 'json',
             success(data) {
@@ -137,7 +137,7 @@ function Login()
                     <br /><br /><br />
                     <label><b>Password</b></label>
                     <br />
-                    <span><input type = 'password' placeholder = "password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
+                    <span><input type = 'password' placeholder = "Password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
                     <br /><br />
                     <button className = 'button' type = 'submit'>Proceed</button> <div id = "reg" className = 'text'>Or Register</div>
                 </div>
