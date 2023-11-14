@@ -45,6 +45,7 @@ function Login()
                 {
                     login_form.style.display = "none";
                     login_form.style.opacity = "0";
+                    window.location.href = '/main';
                 }, 500);
             }, 2000);
             

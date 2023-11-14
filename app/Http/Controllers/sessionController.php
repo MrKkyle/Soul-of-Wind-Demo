@@ -25,7 +25,7 @@ class sessionController extends Controller
         {
             if(!(isset($_SESSION['isLogged'])))
             {
-                $isLogged = null;
+                $isLogged = 'null';
                 $_SESSION['isLogged'] = $isLogged;
                 return response()->json($isLogged);
             }

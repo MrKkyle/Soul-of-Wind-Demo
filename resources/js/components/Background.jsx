@@ -6,10 +6,7 @@ function Background(props)
 {
     return (
         <>
-            <div className = "background-image" style = {{backgroundImage: `url(${props.image})`}}>
-
-            </div>
-            
+            <div className = "background-image" style = {{backgroundImage: `url(${props.image})`}}></div>
         </>
     );
 }

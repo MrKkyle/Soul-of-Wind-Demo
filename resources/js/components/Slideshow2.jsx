@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
-import '../../css/auto-slideshow.css';
+import '../../css/slideshow2.css';
 import image1 from '../../media/wr47krotuod91.png';
 
 

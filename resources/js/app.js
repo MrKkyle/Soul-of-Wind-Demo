@@ -12,4 +12,5 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+/* The index file of the React Application */
 import './index';
