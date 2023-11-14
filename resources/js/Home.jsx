@@ -1,6 +1,7 @@
 import React from 'react';
 import {useEffect} from 'react';
-import Slideshow2 from "./components/Slideshow2";
+import '../css/background.css';
+
 
 
 /* Must start with a Caps letter */
@@ -14,7 +15,10 @@ function Home()
 
     return (
         <>
-
+            <div className = "background">
+                <h2>Hello there</h2>
+            </div>
+            
         </>
     );
 }

@@ -1,0 +1,61 @@
+## Enabling react routes when using larvel/react.js
+- Go to :routes → web.php  
+- insert the following code in the file 
+
+/* React Routes */
+Route::view('/{path?}', 'index')
+    ->where('path', '.*'); 
+
+## How to enable React component's css files
+- Firstly go to :node_modules → laravel-mix → setup → webpack.congif.js
+- insert the code in the file:
+
+mix.styles([
+        'resources/css/background.css',
+        'resources/css/login.css', 
+        'resources/css/navigation-bar.css', 
+    ], 'public/css/index.css');
+
+    const { mix } = require('laravel-mix');
+    const path = require('path');
+    const ExtractTextPlugin = require("extract-text-webpack-plugin");
+    
+    mix.react('resources/assets/src/app.js', 'public/assets/bundle');
+    
+    mix.webpackConfig({
+        module: {
+            rules: [
+                {
+                    test:  /\.s[ac]ss$/,
+                    loader: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use : [
+                            {
+                                loader : 'css-loader',
+                            },
+                            {
+                                loader : 'postcss-loader',
+                            },
+                            {
+                                loader : 'sass-loader',
+    
+                            }
+                        ]
+                    })
+                }
+            ]
+        },
+        plugins: [
+            new ExtractTextPlugin('[name].[contenthash].css')
+        ],
+        devtool : 'source-map'
+    }).sourceMaps();
+    
+    mix.options({
+        processCssUrls: false
+    });
+
+- Next go to: resources → sass → app.scss 
+- Insert and import the files that you will be using in your programme.
+- @import '../css/background.css'; - for example.
+- Proceed to import your css files in your react component, it should work.
