@@ -139,6 +139,10 @@ function Login()
         .done(function( _data) 
         {
             console.log(_data);
+        })
+        .fail( function(xhr) 
+        { 
+            alert(xhr.responseText)
         });
 
         /* The swapping of forms */
@@ -181,11 +185,11 @@ function Login()
                 <div className = 'modal-container'>
 
                     <label style = {{fontSize: '18px'}}><b>Welcome.</b></label>
-                    <br /><br /><br />
+                    <br /><br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "username" value = {inputs.username || ""}  onChange = {handleChange} required></input></span>
-                    <br /><br /><br />
+                    <br /><br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
@@ -198,18 +202,16 @@ function Login()
                 <div className = 'modal-container'>
                     
                     <label style = {{fontSize: '18px'}}><b><u>Register a New Account</u></b></label>
-                    <br /><br /><br />
+                    <br /><br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "register_username" value = {inputs.register_username || ""}  onChange = {handleChange} required></input></span>
-                    <br /><br /><br />
+                    <br /><br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "register_password" value = {inputs.register_password || ""} onChange = {handleChange} required></input></span>
                     <br /><br />
                     <button className = 'button' type = 'submit'>Proceed</button>
-                    <br /><br />
-
                 </div>
             </form>
             <div className = "info-message" id = "message">{result['Status']}</div>

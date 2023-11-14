@@ -19,7 +19,17 @@
     }   
     else 
     {
-        $isLogged = $_SESSION['isLogged'];
-        echo json_encode($isLogged);
+        if(!(isset($_SESSION['isLogged'])))
+        {
+            $isLogged = null;
+            $_SESSION['isLogged'] = $isLogged;
+            echo json_encode($isLogged);
+        }
+        else 
+        {
+            $isLogged = $_SESSION['isLogged'];
+            echo json_encode($isLogged);
+        }
+        
     }
 ?>
