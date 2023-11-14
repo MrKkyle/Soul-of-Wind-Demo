@@ -102,17 +102,14 @@ function Login()
             {
                 message.innerHTML = "";
                 message.style.backgroundColor = "transparent";
-                register_form.style.animation = "Fadeout ease-out 0.5s";
+                register_form.style.animation = "Fadeout ease-out 1s";
                 setTimeout(() =>
                 {
                     register_form.style.display = "none";
-                    register_form.style.opacity = "0";
-
-                    /*
+                    login_form.style.animation = "FadeIn ease-in 1s";
                     login_form.style.display = "block";
                     login_form.style.opacity = "1";
-                    */
-                }, 500);
+                }, 1000);
             }, 2000);
         })
         .fail( function(xhr) 

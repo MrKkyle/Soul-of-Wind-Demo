@@ -10,8 +10,8 @@ class registerController extends Controller
    {
         session_start();
 
-        $user = $_POST['register_username'];
-        $key = $_POST['register_password'];
+        $user = $request['register_username'];
+        $key = $request['register_password'];
 
         $servername = "localhost";
         $username = "root";
