@@ -18,22 +18,14 @@ Route::get('/', function ()
     return view('welcome');
 });
 
-Route::post('register', function () 
-{
-    return view('/register');
-});
+/* Main Routes & Controllers */
+use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerController;
+use App\Http\Controllers\sessionController;
 
-Route::post('session_variables', function () 
-{
-    return view('/session_variables');
-});
+Route::post('/session_variables', [sessionController::class, 'session']);
+Route::post('/register', [registerController::class, 'register']);
+Route::post('/login',[loginController::class, 'login']);
+Route::post('/worker', [AjaxController::class, 'worker']);
 
-Route::post('login', function () 
-{
-    return view('/login');
-});
-
-Route::post('worker', function () 
-{
-    return view('/worker');
-});

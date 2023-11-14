@@ -21,7 +21,6 @@ function Login()
     const Login = (event) =>
     {
         event.preventDefault();
-        const form = $(event.target);
 
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
@@ -109,8 +108,10 @@ function Login()
                     register_form.style.display = "none";
                     register_form.style.opacity = "0";
 
+                    /*
                     login_form.style.display = "block";
                     login_form.style.opacity = "1";
+                    */
                 }, 500);
             }, 2000);
         })
@@ -133,6 +134,7 @@ function Login()
 
     useEffect(()=> 
     {
+        
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
         $.post( "http://localhost:8000/session_variables", {action: "validate"})
