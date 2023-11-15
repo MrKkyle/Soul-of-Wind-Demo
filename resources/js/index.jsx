@@ -7,7 +7,7 @@ export default function Main()
     return ( 
         <div>
             
-            <Navigation_Bar Display = "block"/>
+            <Navigation_Bar/>
             
         </div>
     );

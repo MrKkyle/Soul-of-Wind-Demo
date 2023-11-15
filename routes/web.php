@@ -24,13 +24,13 @@ Route::view('/{path?}', 'index')
     ->where('path', '.*');
 
 /* Main Routes & Controllers */
-use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\workerController;
 
 Route::post('/session_variables', [sessionController::class, 'session_variables']);
 Route::post('/register', [registerController::class, 'register']);
 Route::post('/login',[loginController::class, 'login']);
-Route::post('/worker', [AjaxController::class, 'worker']);
+Route::post('/worker', [workerController::class, 'worker']);
 

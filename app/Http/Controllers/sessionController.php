@@ -1,12 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class sessionController extends Controller 
 {
    public function session_variables(Request $request)
    {
+        session_start();
         /* If action variable = login */
         if ($request["action"] == "login")
         {

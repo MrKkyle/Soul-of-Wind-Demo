@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\DB;
 
 class loginController extends Controller 
 {
-
    public function login(Request $request)
    {
         session_start();
