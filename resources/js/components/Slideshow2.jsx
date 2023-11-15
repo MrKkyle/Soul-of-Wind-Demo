@@ -4,7 +4,7 @@ import '../../css/slideshow2.css';
 import image1 from '../../media/wr47krotuod91.png';
 
 
-function Auto_Slideshow(props)
+function Slideshow2(props)
 {
     useEffect(()=> 
     {
@@ -64,7 +64,7 @@ function Auto_Slideshow(props)
   
 };
 
-Auto_Slideshow.defaultProps = 
+Slideshow2.defaultProps = 
 { 
     Image1: image1,
     Image2: image1,
@@ -73,4 +73,4 @@ Auto_Slideshow.defaultProps =
     Text2: "Add text here", 
     Text3: "Add text here"
 }
-export default Auto_Slideshow;
+export default Slideshow2;

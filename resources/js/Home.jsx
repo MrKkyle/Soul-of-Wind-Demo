@@ -1,6 +1,8 @@
 import React from 'react';
 import {useEffect} from 'react';
 import Background from './components/Background';
+import Slideshow2 from './components/Slideshow2';
+import SnowEffect from './components/Snow-effect';
 
 
 
@@ -15,7 +17,7 @@ function Home()
 
     return (
         <>
-            <Background />
+            <SnowEffect />
             
         </>
     );

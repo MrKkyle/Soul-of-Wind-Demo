@@ -1,0 +1,13 @@
+body 
+{
+    background: linear-gradient(to bottom, #202020, #111119);
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+canvas 
+{
+    transform: rotateZ(13deg) scale(1.2);
+}
