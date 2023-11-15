@@ -10,7 +10,6 @@ export default function Main()
         <div>
             
             <Navigation_Bar Display = "block"/>
-            <Background />
             
         </div>
     );

@@ -6,13 +6,14 @@ function Background(props)
 {
     return (
         <>
-            <div className = "background-image" style = {{backgroundImage: `url(${props.image})`}}></div>
+            <div className = "background" style = {{backgroundImage: `url(${props.image})`, background: props.background}}></div>
         </>
     );
 }
 
 Background.defaultProps = 
 {
-    image: "#ccc"
+    image: "",
+    background: "linear-gradient(to bottom, #202020, #111119)"
 };
 export default Background;

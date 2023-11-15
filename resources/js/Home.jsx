@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
-import '../css/background.css';
+import Background from './components/Background';
 
 
 
@@ -15,9 +15,7 @@ function Home()
 
     return (
         <>
-            <div className = "background">
-                <h2>Hello there</h2>
-            </div>
+            <Background />
             
         </>
     );

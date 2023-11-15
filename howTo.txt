@@ -59,3 +59,9 @@ mix.styles([
 - Insert and import the files that you will be using in your programme.
 - @import '../css/background.css'; - for example.
 - Proceed to import your css files in your react component, it should work.
+
+## Sources:
+https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
+https://laravel.com/docs/6.x/mix#plain-css
+https://laracasts.com/discuss/channels/javascript/react-css-modules-with-laravel-mix
+https://stackoverflow.com/questions/60145632/how-to-add-a-style-css-to-react-laravel-app
