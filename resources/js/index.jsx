@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navigation_Bar from './components/Navigation-bar';
-import Background from './components/Background';
-import '../css/background.CSS';
 
 export default function Main()
 {

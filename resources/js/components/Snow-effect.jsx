@@ -1,5 +1,6 @@
 import React from 'react';
 import {useEffect} from 'react';
+import '../../css/snow-effect.css';
 
 /* Must start with a Caps letter */
 function SnowEffect()
