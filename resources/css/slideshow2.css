@@ -137,8 +137,37 @@ body
     background-color: transparent;
     transition: background-color 0.5s ease-in-out; 
 }
-    #slide-select .selector.current 
-    {
-        background-color: white; 
-    }
+#slide-select .selector.current 
+{
+    background-color: white; 
+}
+
+.youtube 
+{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    background: linear-gradient(to bottom, #ad0d0d, rgb(151, 151, 150));
+    color: white;
+    cursor: pointer;
+}
+.spotify 
+{
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    background: linear-gradient(to bottom, rgb(24, 206, 0), rgb(197, 197, 197));
+    color: white;
+    cursor: pointer;
+}
+
+
   

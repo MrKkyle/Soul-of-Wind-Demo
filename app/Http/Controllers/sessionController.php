@@ -6,7 +6,6 @@ class sessionController extends Controller
 {
    public function session_variables(Request $request)
    {
-        session_start();
         /* If action variable = login */
         if ($request["action"] == "login")
         {

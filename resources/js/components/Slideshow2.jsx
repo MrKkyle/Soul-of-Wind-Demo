@@ -66,32 +66,56 @@ function Slideshow2(props)
         <div id="container">
             <ul id="slides">
                 <li className="slide">
-                <div className="slide-partial slide-left"><img src={props.Image1_left}/></div>
-                <div className="slide-partial slide-right"><img src={props.Image1_right}/></div>
-                <h1 className="title"><span className="title-text">{props.Text1}</span></h1>
+                    <div className="slide-partial slide-left"><img src={props.Image1_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image1_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text1}</span></h1>
+                </li>
+                    <li className="slide">
+                    <div className="slide-partial slide-left"><img src={props.Image2_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image2_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text2}</span></h1>
                 </li>
                 <li className="slide">
-                <div className="slide-partial slide-left"><img src={props.Image2_left}/></div>
-                <div className="slide-partial slide-right"><img src={props.Image2_right}/></div>
-                <h1 className="title"><span className="title-text">{props.Text2}</span></h1>
+                    <div className="slide-partial slide-left"><img src={props.Image3_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image3_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text3}</span></h1>
                 </li>
                 <li className="slide">
-                <div className="slide-partial slide-left"><img src={props.Image3_left}/></div>
-                <div className="slide-partial slide-right"><img src={props.Image3_right}/></div>
-                <h1 className="title"><span className="title-text">{props.Text3}</span></h1>
+                    <div className="slide-partial slide-left"><img src={props.Image4_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image4_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text4}</span></h1>
                 </li>
                 <li className="slide">
-                <div className="slide-partial slide-left"><img src={props.Image4_left}/></div>
-                <div className="slide-partial slide-right"><img src={props.Image4_right}/></div>
-                <h1 className="title"><span className="title-text">{props.Text4}</span></h1>
+                    <div className="slide-partial slide-left"><img src={props.Image5_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image5_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text5}</span></h1>
                 </li>
                 <li className="slide">
-                <div className="slide-partial slide-left"><img src={props.Image5_left}/></div>
-                <div className="slide-partial slide-right"><img src={props.Image_right}/></div>
-                <h1 className="title"><span className="title-text">{props.Text5}</span></h1>
+                    <div className="slide-partial slide-left"><img src={props.Image6_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image6_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text6}</span></h1>
+                </li>
+                <li className="slide">
+                    <div className="slide-partial slide-left"><img src={props.Image7_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image7_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text7}</span></h1>
+                </li>
+                <li className="slide">
+                    <div className="slide-partial slide-left"><img src={props.Image8_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image8_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text8}</span></h1>
+                </li>
+                <li className="slide">
+                    <div className="slide-partial slide-left"><img src={props.Image9_left}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Imag9_right}/></div>
+                    <h1 className="title"><span className="title-text">{props.Text9}</span></h1>
                 </li>
             </ul>
             <ul id="slide-select">
+                <li className="selector"></li>
+                <li className="selector"></li>
+                <li className="selector"></li>
+                <li className="selector"></li>
                 <li className="selector"></li>
                 <li className="selector"></li>
                 <li className="selector"></li>
@@ -120,6 +144,11 @@ Slideshow2.defaultProps =
     Text2: "Add text here", 
     Text3: "Add text here",
     Text4: "Add text here", 
-    Text5: "Add text here"
+    Text5: "Add text here",
+    Text6: "Add text here",
+    Text7: "Add text here",
+    Text8: "Add text here",
+    Text9: "Add text here"
+
 }
 export default Slideshow2;
