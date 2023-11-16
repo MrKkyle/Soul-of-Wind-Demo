@@ -107,7 +107,7 @@ function Slideshow2(props)
                 </li>
                 <li className="slide">
                     <div className="slide-partial slide-left"><img src={props.Image9_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Imag9_right}/></div>
+                    <div className="slide-partial slide-right"><img src={props.Image9_right}/></div>
                     <h1 className="title"><span className="title-text">{props.Text9}</span></h1>
                 </li>
             </ul>

@@ -145,29 +145,91 @@ body
 .youtube 
 {
     position: absolute;
-    width: 100px;
-    height: 50px;
+    width: 130px;
+    height: 40px;
     border-radius: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
     padding: 5px;
-    background: linear-gradient(to bottom, #ad0d0d, rgb(151, 151, 150));
-    color: white;
+    background: linear-gradient(to bottom, #a71818, rgb(255 0 0));
+    color: rgb(0, 0, 0);
     cursor: pointer;
+    z-index: 1;
+    border: none;
+    left: 1%;
+    top: 90%;
+    transform: translate(0%, -50%);
+    text-decoration: none;
 }
 .spotify 
 {
     position: absolute;
-    width: 100px;
-    height: 50px;
+    width: 130px;
+    height: 40px;
     border-radius: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 15px;
     padding: 5px;
-    background: linear-gradient(to bottom, rgb(24, 206, 0), rgb(197, 197, 197));
-    color: white;
+    background: linear-gradient(to bottom, rgb(8 133 19), rgb(0 255 8));
+    color: rgb(0, 0, 0);
     cursor: pointer;
+    z-index: 1;
+    border: none;
+    left: 1%;
+    top: 83%;
+    transform: translate(0%, -50%);
+    text-decoration: none;
 }
+.sound-cloud 
+{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: 5px;
+    background: linear-gradient(to bottom, #bb4c09, rgb(255 47 0));
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    left: 1%;
+    top: 76%;
+    transform: translate(0%, -50%);
+    text-decoration: none;
+}
+
+.icon 
+{
+    position: absolute;
+    height: 29px;
+    width: 28px;
+    top: 6px;
+    left: 5px;
+    display: block;
+    background-size: cover;
+}
+.sp 
+{
+    background-image: url(../media/spotify.png);
+}
+.yt 
+{
+    background-image: url(../media/youtube.png);
+}
+.sc 
+{
+    background-image: url(../media/sound-cloud.png);
+}
+.txt 
+{
+    position: relative;
+    left: 33px;
+    top: 2px;
+}
+
+
 
 
   

@@ -11,5 +11,5 @@ canvas
     transform: rotateZ(13deg) scale(1.2);
     display: block;
     position: absolute;
-    z-index: 100;
+    z-index: 1;
 }
