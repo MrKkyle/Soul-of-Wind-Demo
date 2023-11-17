@@ -2,6 +2,8 @@ import React from 'react';
 import {useEffect} from 'react';
 import Slideshow2 from './components/Slideshow2';
 import SnowEffect from './components/Snow-effect';
+import AudioPlayer from './components/Audio-Player';
+import Overlay_Navigation from './components/overlay-navigation';
 import $ from "jquery";
 
 import image1 from '../media/Slideshow/image_part_011.png'; import image2 from '../media/Slideshow/image_part_012.png';
@@ -35,11 +37,29 @@ function Home()
             alert(xhr.responseText)
         });
 
+        let overlay_open = document.getElementById("open"); let overlay_close = document.getElementById("close");
+        let yt = document.querySelector(".youtube"); let sp = document.querySelector(".spotify"); let sc = document.querySelector(".sound-cloud");
+        let audio = document.querySelector(".audio-player"); let slide_select = document.getElementById("slide-select");
+        overlay_open.addEventListener("click", () =>
+        {
+            yt.style.display = "none"; sp.style.display = "none"; sc.style.display = "none";
+            audio.style.display = "none"; slide_select.style.display = "none";
+        });
+
+        overlay_close.addEventListener("click", () =>
+        {
+            yt.style.display = "block"; sp.style.display = "block"; sc.style.display = "block";
+            audio.style.display = "grid"; slide_select.style.display = "block";
+        });
+
     }, []);
 
     return (
         <>
             <SnowEffect />
+            <AudioPlayer />
+            <Overlay_Navigation />
+
             <Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
             Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10} Image6_left = {image11} Image6_right = {image12} 
             Image7_left = {image13} Image7_right = {image14} Image8_left = {image15} Image8_right = {image16} Image9_left = {image17} Image9_right = {image18}
@@ -50,8 +70,23 @@ function Home()
             <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
             <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
             
+            
+            
         </>
     );
 }
 
 export default Home;
+
+/*
+<Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
+            Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10} Image6_left = {image11} Image6_right = {image12} 
+            Image7_left = {image13} Image7_right = {image14} Image8_left = {image15} Image8_right = {image16} Image9_left = {image17} Image9_right = {image18}
+            Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief" Text6 = "Thunder Sounds" 
+            Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>
+
+            <a href = "https://www.youtube.com/channel/UCUZNK80DemBN3kyxusDLwrA" target = "_blank" className = "youtube"><i className = "icon yt"></i><div className = "txt">Youtube</div></a>
+            <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
+            <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
+            
+            */
