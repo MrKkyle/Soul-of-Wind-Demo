@@ -19,7 +19,7 @@ import image17 from '../media/Slideshow/image_part_091.png'; import image18 from
 
 
 /* Must start with a Caps letter */
-function Home()
+function SoulOfWind()
 {
 
     useEffect(()=> 
@@ -57,36 +57,23 @@ function Home()
     return (
         <>
             <SnowEffect />
-            <AudioPlayer />
             <Overlay_Navigation />
 
             <Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
             Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10} Image6_left = {image11} Image6_right = {image12} 
             Image7_left = {image13} Image7_right = {image14} Image8_left = {image15} Image8_right = {image16} Image9_left = {image17} Image9_right = {image18}
             Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief" Text6 = "Thunder Sounds" 
-            Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>
-
-            <a href = "https://www.youtube.com/channel/UCUZNK80DemBN3kyxusDLwrA" target = "_blank" className = "youtube"><i className = "icon yt"></i><div className = "txt">Youtube</div></a>
-            <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
-            <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
-            
+            Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>            
             
             
         </>
     );
 }
 
-export default Home;
+export default SoulOfWind;
 
 /*
-<Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
-            Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10} Image6_left = {image11} Image6_right = {image12} 
-            Image7_left = {image13} Image7_right = {image14} Image8_left = {image15} Image8_right = {image16} Image9_left = {image17} Image9_right = {image18}
-            Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief" Text6 = "Thunder Sounds" 
-            Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>
-
             <a href = "https://www.youtube.com/channel/UCUZNK80DemBN3kyxusDLwrA" target = "_blank" className = "youtube"><i className = "icon yt"></i><div className = "txt">Youtube</div></a>
             <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
             <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
-            
-            */
+*/

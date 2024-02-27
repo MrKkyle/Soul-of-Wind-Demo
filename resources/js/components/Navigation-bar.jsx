@@ -4,8 +4,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {useEffect} from 'react';
 
 /* Import links below ↓ */
-import Home from '../Login';
-import Main from '../Home';
+import Login from '../Login';
+import WindsSoulMelody from '../Winds-Soul-Melody';
+import SoulOfWind from '../Soul-of-Wind';
+import Redirect from '../Redirect';
 import NoPage from '../NoPage';
 
 // Import Style sheet below
@@ -17,14 +19,15 @@ function Navigation_Bar(props)
 
     }, []);
 
-
     return (
         <div id = "navigation" style = {{display: props.Display}}>
             <BrowserRouter>
                 <Routes>
                     <Route path = "/">
-                        <Route index element = {<Home />}></Route>
-                        <Route path = "main" element = {<Main />}></Route>
+                        <Route index element = {<Login />}></Route>
+                        <Route path = "redirect" element = {<Redirect />}></Route>
+                        <Route path = "wind-soul-melody" element = {<WindsSoulMelody />}></Route>
+                        <Route path = "soul-of-wind" element = {<SoulOfWind />}></Route>
                         <Route path = "*" element = {<NoPage />}></Route>
                     </Route>
                 </Routes>
