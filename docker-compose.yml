@@ -8,13 +8,13 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: soul-of-wind
-    container_name: Soul-of-Wind Container
+    container_name: Soul-of-Wind-Container
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
     networks:
-      - SOF-network
+      - SOW-network
   db:
     image: mysql:8.0
     container_name: SOF-db
@@ -29,10 +29,10 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - SOF-network
+      - SOW-network
   nginx:
     image: nginx:alpine
-    container_name: SOF-nginx
+    container_name: SOW-nginx
     restart: unless-stopped
     ports:
       - 8000:80
@@ -40,7 +40,7 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - SOF-network
+      - SOW-network
 networks:
-  SOF-network:
+  SOW-network:
     driver: bridge
