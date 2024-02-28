@@ -60,8 +60,15 @@ mix.styles([
 - @import '../css/background.css'; - for example.
 - Proceed to import your css files in your react component, it should work.
 
+## How to setup project with docker(recommended)
+
+- Proceed to the soul of wind container and run: `composer install`, which will then fix the error of autoload.php not
+being found 
+- 
+
 ## Sources:
-https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
-https://laravel.com/docs/6.x/mix#plain-css
-https://laracasts.com/discuss/channels/javascript/react-css-modules-with-laravel-mix
-https://stackoverflow.com/questions/60145632/how-to-add-a-style-css-to-react-laravel-app
+- https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
+- https://laravel.com/docs/6.x/mix#plain-css
+- https://laracasts.com/discuss/channels/javascript/react-css-modules-with-laravel-mix
+- https://stackoverflow.com/questions/60145632/how-to-add-a-style-css-to-react-laravel-app
+- https://phoenixnap.com/kb/laravel-docker 
