@@ -8,28 +8,40 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: soul-of-wind
-    container_name: Soul-of-Wind-Container
+    container_name: SOW-container
     restart: unless-stopped
     working_dir: /var/www/
+    ports:
+      - "5000:5000"
     volumes:
-      - ./:/var/www
+      - ./:/var/www 
     networks:
       - SOW-network
   db:
     image: mysql:8.0
-    container_name: SOF-db
+    container_name: SOW-db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_USER: ${DB_USERNAME}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
       - SOW-network
+  node:
+    image: "node:alpine"
+    container_name: SOW-node
+    user: "node"
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install --legacy-peer-deps && 
+              npm run dev"    
   nginx:
     image: nginx:alpine
     container_name: SOW-nginx

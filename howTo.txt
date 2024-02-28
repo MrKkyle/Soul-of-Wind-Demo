@@ -64,7 +64,8 @@ mix.styles([
 
 - Proceed to the soul of wind container and run: `composer install`, which will then fix the error of autoload.php not
 being found 
-- 
+- Generate an application encryption key: `php artisan key:generate` , run this on the soul-of-wind container
+
 
 ## Sources:
 - https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
