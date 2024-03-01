@@ -13,14 +13,16 @@ services:
       - php-fpm
       - db
       - node
+
   php-fpm:
-    image: php:8-fpm
     container_name: SOW-php
     build:
       context: ./
       dockerfile: Dockerfile
+    working_dir: /var/www/html
     volumes:
-      - ./src:/var/www/html
+      - ./:/var/www/html
+
   node:
     image: "node:alpine"
     container_name: SOW-node
@@ -29,7 +31,8 @@ services:
     volumes:
       - ./:/var/www/
     command: sh -c "npm install --legacy-peer-deps && 
-              npm run build && npm run dev"  
+              npm run build && npm run dev"
+
   db:
     image: mysql:8.0
     container_name: SOW-db
@@ -41,4 +44,8 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d             
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+
+networks:
+    laravel:
+        driver: bridge
