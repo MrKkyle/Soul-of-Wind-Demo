@@ -66,8 +66,6 @@ mix.styles([
 being found 
 - Generate an application encryption key: `php artisan key:generate` , run this on the soul-of-wind container
 
-## Blank Screen error, refuse to retrieve some imports of files
-- Go to /public and remove the hot file
 
 ## Sources:
 - https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
