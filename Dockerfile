@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM composer:latest
 ARG user
 ARG uid
 RUN apt update && apt install -y \
