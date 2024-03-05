@@ -9,10 +9,8 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./docker-compose/nginx/default.conf:/etc/nginx/conf.d/default.conf
-    links:
-      - php-fpm
-      - db
-      - node
+    networks:
+      - laravel
 
   php-fpm:
     container_name: SOW-php
@@ -21,7 +19,9 @@ services:
       dockerfile: Dockerfile
     working_dir: /var/www/html
     volumes:
-      - ./:/var/www/html
+      - ./src:/var/www/html
+    networks:
+      - laravel
 
   node:
     image: "node:alpine"
@@ -32,6 +32,8 @@ services:
       - ./:/var/www/
     command: sh -c "npm install --legacy-peer-deps && 
               npm run build && npm run dev"
+    networks:
+      - laravel
 
   db:
     image: mysql:8.0
@@ -45,6 +47,8 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - laravel
 
 networks:
     laravel:
