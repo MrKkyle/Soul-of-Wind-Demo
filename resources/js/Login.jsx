@@ -4,6 +4,7 @@ import {useState} from "react";
 import $ from "jquery";
 
 import '../CSS/login.css';
+import video from '../media/Live-wallpapers/SOW-video.mp4';
 
 function Login()
 {
@@ -130,7 +131,6 @@ function Login()
 
     useEffect(()=> 
     {
-        
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
         $.post( "http://localhost:8000/session_variables", {action: "validate"})
@@ -177,12 +177,14 @@ function Login()
     return (
     <>
     <div>
+        <video loop autoPlay muted className = "video" id = "video">
+            <source src = {video} type = "video/mp4"></source>
+        </video>
         <div className = 'modal1' id = "model" style = {{display: 'block'}}>
-
             <form className = 'modal-content' method = 'post' onSubmit={(event) => Login(event)} autoComplete='off' id = 'form1'>
                 <div className = 'modal-container'>
 
-                    <label style = {{fontSize: '18px'}}><b>Welcome.</b></label>
+                    <label style = {{fontSize: '18px'}}><b>Welcome</b></label>
                     <br /><br />
                     <label><b>Username</b></label>
                     <br />
@@ -216,8 +218,6 @@ function Login()
 
             <div className = 'return-button'></div>
         </div>
-
-        
     </div>
     </>
     );
