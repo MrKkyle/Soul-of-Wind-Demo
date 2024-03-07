@@ -10,7 +10,7 @@ function WindsSoulMelody()
 
     return (
         <>
-            
+            <h2>Winds soul Melody</h2>
         </>
     );
 

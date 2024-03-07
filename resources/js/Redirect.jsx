@@ -11,7 +11,7 @@ function Redirect()
 
     return (
         <>
-            <Background />
+            <h2>Welcome to the redirect page!</h2>
         </>
     );
 

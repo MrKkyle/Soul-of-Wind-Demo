@@ -25,6 +25,7 @@ function Login()
 
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
+        let message = document.getElementById("message");
         /* Login */
         $.post( "http://localhost:8000/login", {action: "login", username: inputs.username, password: inputs.password}, [],'json')
         .done(function( _data) 
@@ -32,7 +33,6 @@ function Login()
             console.log(_data);
 
             /* configure message */
-            let message = document.getElementById("message");
             let login_form = document.getElementById("form1");
             message.style.display = "block";
             message.innerHTML = "Login Sucessfully";
@@ -42,38 +42,23 @@ function Login()
                 message.innerHTML = "";
                 message.style.backgroundColor = "transparent";
                 login_form.style.animation = "Fadeout ease-out 0.5s";
-                setTimeout(() =>
-                {
-                    window.location.href = '/main';
-                }, 200);
+                setTimeout(() => { window.location.href = '/redirect'; }, 200);
             }, 500);
             
         })
         .fail( function(xhr) 
         { 
-            alert(xhr.responseText);
             /* configure message */
-            let message = document.getElementById("message");
             message.style.display = "block";
             message.innerHTML = "Login Failed";
             message.style.backgroundColor = "rgb(175, 11, 11)";
-            setTimeout(() =>
-            {
-                message.innerHTML = "";
-                message.style.backgroundColor = "transparent";
-            }, 2000);
+            setTimeout(() => {  message.innerHTML = ""; message.style.backgroundColor = "transparent"; }, 2000);
         });
 
         /* Set session variables */
         $.post( "http://localhost:8000/session_variables", {action: "login"})
-        .done(function( _data) 
-        {
-            console.log(_data);
-        })
-        .fail( function(xhr) 
-        { 
-            alert(xhr.responseText)
-        });
+        .done(function( _data) { console.log(_data); })
+        .fail( function(xhr) { alert(xhr.responseText) });
     }
 
     //Register
@@ -90,7 +75,6 @@ function Login()
         {
             setResult(_data);
             console.log(_data);
-            let message = document.getElementById("message");
             let register_form = document.getElementById("form2");
             let login_form = document.getElementById("form1");
             
@@ -100,31 +84,23 @@ function Login()
             message.style.backgroundColor = "rgb(6, 133, 6)";
             setTimeout(() =>
             {
-                message.innerHTML = "";
-                message.style.backgroundColor = "transparent";
+                message.innerHTML = ""; message.style.backgroundColor = "transparent";
                 register_form.style.animation = "Fadeout ease-out 1s";
                 setTimeout(() =>
                 {
-                    register_form.style.display = "none";
-                    login_form.style.animation = "FadeIn ease-in 1s";
-                    login_form.style.display = "block";
-                    login_form.style.opacity = "1";
+                    register_form.style.display = "none"; login_form.style.animation = "FadeIn ease-in 1s";
+                    login_form.style.display = "block"; login_form.style.opacity = "1";
                 }, 1000);
             }, 2000);
         })
         .fail( function(xhr) 
         { 
             console.log(xhr.responseText);
-            let message = document.getElementById("message");
             /* configure message */
             message.style.display = "block";
             message.innerHTML = "Registered Failed";
             message.style.backgroundColor = "rgb(175, 11, 11)";
-            setTimeout(() =>
-            {
-                message.innerHTML = "";
-                message.style.backgroundColor = "transparent";
-            }, 2000);
+            setTimeout(() => { message.innerHTML = ""; message.style.backgroundColor = "transparent"; }, 2000);
         });
     }
 
@@ -134,14 +110,8 @@ function Login()
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
         $.post( "http://localhost:8000/session_variables", {action: "validate"})
-        .done(function( _data) 
-        {
-            console.log(_data);
-        })
-        .fail( function(xhr) 
-        { 
-            alert(xhr.responseText)
-        });
+        .done(function( _data) { console.log(_data); })
+        .fail( function(xhr) { alert(xhr.responseText) });
 
         /* The swapping of forms */
         let register_button = document.getElementById("reg");
@@ -150,24 +120,16 @@ function Login()
         let form2 = document.getElementById("form2");
         register_button.addEventListener("click", () =>
         {
-            form1.style.animation = "Fadeout ease-out 1s";
-            form1.style.display = "none";
-
-            form2.style.animation = "FadeIn ease-in 1s";
-            form2.style.display = "block";
-
+            form1.style.animation = "Fadeout ease-out 1s";form1.style.display = "none";
+            form2.style.animation = "FadeIn ease-in 1s"; form2.style.display = "block";
             return_button.style.display = "block";
         });
 
         /* return button swapping of forms */
         return_button.addEventListener("click", () =>
         {
-            form2.style.animation = "Fadeout ease-out 1s";
-            form2.style.display = "none";
-
-            form1.style.animation = "FadeIn ease-in 1s";
-            form1.style.display = "block";
-
+            form2.style.animation = "Fadeout ease-out 1s"; form2.style.display = "none";
+            form1.style.animation = "FadeIn ease-in 1s"; form1.style.display = "block";
             return_button.style.display = "none";
         })
         
@@ -178,22 +140,22 @@ function Login()
     <>
     <div>
         <video loop autoPlay muted className = "video" id = "video">
-            <source src = {video} type = "video/mp4"></source>
+            <source src = {video} type = "video/mp4" />
         </video>
         <div className = 'modal1' id = "model" style = {{display: 'block'}}>
             <form className = 'modal-content' method = 'post' onSubmit={(event) => Login(event)} autoComplete='off' id = 'form1'>
                 <div className = 'modal-container'>
 
                     <label style = {{fontSize: '18px'}}><b>Welcome</b></label>
-                    <br /><br />
+                    <br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "username" value = {inputs.username || ""}  onChange = {handleChange} required></input></span>
-                    <br /><br />
+                    <br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
-                    <br /><br />
+                    <br />
                     <button className = 'button' type = 'submit'>Proceed</button> <div id = "reg" className = 'text'>Or Register</div>
                 </div>
             </form>
@@ -202,15 +164,15 @@ function Login()
                 <div className = 'modal-container'>
                     
                     <label style = {{fontSize: '18px'}}><b><u>Register a New Account</u></b></label>
-                    <br /><br />
+                    <br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "register_username" value = {inputs.register_username || ""}  onChange = {handleChange} required></input></span>
-                    <br /><br />
+                    <br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "register_password" value = {inputs.register_password || ""} onChange = {handleChange} required></input></span>
-                    <br /><br />
+                    <br />
                     <button className = 'button' type = 'submit'>Proceed</button>
                 </div>
             </form>

@@ -6,9 +6,7 @@ export default function Main()
 {
     return ( 
         <div>
-            
             <Navigation_Bar/>
-            
         </div>
     );
 }

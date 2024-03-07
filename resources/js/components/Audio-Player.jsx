@@ -81,7 +81,6 @@ function AudioPlayer(props)
             } 
             else 
             {
-
                 volumeEl.classList.add("icono-volumeMedium");
                 volumeEl.classList.remove("icono-volumeMute");
             }
