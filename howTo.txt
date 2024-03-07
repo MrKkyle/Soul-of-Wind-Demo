@@ -69,9 +69,14 @@ being found
 ## Blank Screen error, refuse to retrieve some imports of files
 - Go to /public and remove the hot file
 
+##Mysqli error
+- Follow this guide, if not already implemented
+- Listed below
+
 ## Sources:
 - https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
 - https://laravel.com/docs/6.x/mix#plain-css
 - https://laracasts.com/discuss/channels/javascript/react-css-modules-with-laravel-mix
 - https://stackoverflow.com/questions/60145632/how-to-add-a-style-css-to-react-laravel-app
 - https://phoenixnap.com/kb/laravel-docker 
+- https://thriveread.com/run-docker-php-ext-install-mysqli/
