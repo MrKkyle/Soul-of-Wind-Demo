@@ -155,7 +155,7 @@ function Login()
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>
-                    <br />
+                    <br /><br />
                     <button className = 'button' type = 'submit'>Proceed</button> <div id = "reg" className = 'text'>Or Register</div>
                 </div>
             </form>
@@ -168,11 +168,11 @@ function Login()
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "register_username" value = {inputs.register_username || ""}  onChange = {handleChange} required></input></span>
-                    <br />
+                    <br /><br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "register_password" value = {inputs.register_password || ""} onChange = {handleChange} required></input></span>
-                    <br />
+                    <br /><br />
                     <button className = 'button' type = 'submit'>Proceed</button>
                 </div>
             </form>
