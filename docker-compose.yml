@@ -6,20 +6,21 @@ services:
         user: Kyle
         uid: 1000
       context: ./
-      dockerfile: Dockerfile
-    image: soul-of-wind
-    container_name: SOW-container
+      dockerfile: Dockerfile.App
+    image: ${APP_IMAGE_NAME}
+    container_name: ${APP_CONTAINER_NAME}
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
-      - ./:/var/www 
+      - ./:/var/www
     networks:
       - SOW-network
     depends_on:
-      - db  
+      - db
+
   db:
     image: mysql:8.0
-    container_name: SOW-db
+    container_name: ${DB_CONTAINER_NAME}
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
@@ -28,21 +29,24 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+      - laravel-volume:/docker-entrypoint-initdb.d
     networks:
       - SOW-network
+
   node:
-    image: "node:alpine"
-    container_name: SOW-node
+    image: node:alpine
+    build:
+      context: ./
+      dockerfile: Dockerfile.Node
+    container_name: ${NODE_CONTAINER_NAME}
     user: "node"
     working_dir: /var/www/
     volumes:
       - ./:/var/www
-    command: sh -c "npm install --legacy-peer-deps && 
-              npm run build && npm run dev"    
+
   nginx:
     image: nginx:alpine
-    container_name: SOW-nginx
+    container_name: ${NGINX_CONTAINER_NAME}
     restart: unless-stopped
     ports:
       - 8000:80
@@ -51,6 +55,11 @@ services:
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
       - SOW-network
+
+volumes:
+    laravel-volume:
+        driver: local
+
 networks:
   SOW-network:
     driver: bridge
