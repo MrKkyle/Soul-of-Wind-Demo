@@ -12,11 +12,8 @@ services:
     working_dir: /var/www/
     volumes:
       - ./:/var/www 
-    command: sh -c  "php artisan serve" 
     networks:
       - SOW-network
-    ports:
-      - "5173:5173"  
     depends_on:
       - db  
       - node
@@ -40,12 +37,15 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.node
-    image: "node:alpine"
+    image: node:alpine
     container_name: SOW-node
     working_dir: /var/www/
+    ports:
+      - 5173:5173
+    environment:
+      APP_URL: ${APP_URL}
     volumes:
       - ./:/var/www
-    command: sh -c  "npm run dev"   
   nginx:
     image: nginx:alpine
     container_name: ${NGINX_CONTAINER_NAME}

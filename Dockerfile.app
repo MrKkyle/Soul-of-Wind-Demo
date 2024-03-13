@@ -23,10 +23,10 @@ RUN mkdir -p /home/$user/.composer && \
 COPY ./ /var/www
 
 WORKDIR /var/www
+
 #Installing composer
-RUN composer install 
-RUN php artisan breeze:install
- 
-RUN php artisan migrate
+RUN composer install
 
 USER $user
+
+CMD ["php", "artisan", "serve"]
