@@ -29,4 +29,4 @@ RUN composer install
 
 USER $user
 
-CMD ["php", "artisan", "serve"]
+#CMD ["php", "artisan", "serve"]
