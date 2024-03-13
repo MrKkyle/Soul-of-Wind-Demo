@@ -6,17 +6,21 @@ services:
         user: Kyle
         uid: 1000
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.app
     image: soul-of-wind
     container_name: SOW-container
-    restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www 
+    command: sh -c  "php artisan serve" 
     networks:
       - SOW-network
+    ports:
+      - "5173:5173"  
     depends_on:
       - db  
+      - node
+      - nginx
   db:
     image: mysql:8.0
     container_name: SOW-db
@@ -32,14 +36,15 @@ services:
     networks:
       - SOW-network
   node:
+    build:
+      context: ./
+      dockerfile: Dockerfile.node
     image: "node:alpine"
     container_name: SOW-node
-    user: "node"
     working_dir: /var/www/
     volumes:
       - ./:/var/www
-    command: sh -c "npm install --legacy-peer-deps && 
-              npm run build && npm run dev"    
+    command: sh -c  "npm run dev"   
   nginx:
     image: nginx:alpine
     container_name: SOW-nginx

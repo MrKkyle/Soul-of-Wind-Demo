@@ -1,6 +1,8 @@
+#Installing PHP
 FROM php:8.2-fpm
 ARG user
 ARG uid
+ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN apt update && apt install -y \
     git \
     curl \
@@ -16,5 +18,15 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN useradd -G www-data,root -u $uid -d /home/$user $user
 RUN mkdir -p /home/$user/.composer && \
     chown -R $user:$user /home/$user
+
+#Copying files
+COPY ./ /var/www
+
 WORKDIR /var/www
+#Installing composer
+RUN composer install 
+RUN php artisan breeze:install
+ 
+RUN php artisan migrate
+
 USER $user

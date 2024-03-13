@@ -146,12 +146,12 @@ function Login()
             <form className = 'modal-content' method = 'post' onSubmit={(event) => Login(event)} autoComplete='off' id = 'form1'>
                 <div className = 'modal-container'>
 
-                    <label style = {{fontSize: '18px'}}><b>Welcome</b></label>
+                    <label style = {{fontSize: '18px'}}><b>WelCome</b></label>
                     <br />
                     <label><b>Username</b></label>
                     <br />
                     <span><input type = 'text' placeholder = "Name" name = "username" value = {inputs.username || ""}  onChange = {handleChange} required></input></span>
-                    <br />
+                    <br /><br />
                     <label><b>Password</b></label>
                     <br />
                     <span><input type = 'password' placeholder = "Password" name = "password" value = {inputs.password || ""} onChange = {handleChange} required></input></span>

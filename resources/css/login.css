@@ -37,17 +37,16 @@
     position: relative;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.1);
-    transition-duration: 0.5s;
-    color: aliceblue;
-
+    transform: translate(-50%,-50%);
+    background-color: #0000008a;
+    transition-duration: .5s;
+    color: #f0f8ff;
+    border-radius: 5px;
 }
 .modal-container:hover 
 {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #000000a8;
 }
-
 .modal-content .text 
 {
 	background-color: transparent;
