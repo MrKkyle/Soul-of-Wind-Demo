@@ -23,7 +23,7 @@ services:
       - nginx
   db:
     image: mysql:8.0
-    container_name: SOW-db
+    container_name: ${DB_CONTAINER_NAME}
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
@@ -32,9 +32,10 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+      - laravel-volume:/docker-entrypoint-initdb.d
     networks:
       - SOW-network
+
   node:
     build:
       context: ./
@@ -47,7 +48,7 @@ services:
     command: sh -c  "npm run dev"   
   nginx:
     image: nginx:alpine
-    container_name: SOW-nginx
+    container_name: ${NGINX_CONTAINER_NAME}
     restart: unless-stopped
     ports:
       - 8000:80
@@ -56,6 +57,11 @@ services:
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
       - SOW-network
+
+volumes:
+    laravel-volume:
+        driver: local
+
 networks:
   SOW-network:
     driver: bridge
