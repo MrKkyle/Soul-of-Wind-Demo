@@ -12,24 +12,24 @@ class loginController extends Controller
         {   
             $result = array("username"=>$_SESSION['username'], "key"=>$_SESSION['key'] , "Status"=>"validate");
             return response()->json($result); 
-            exit();
         }
 
+        //User credentials from form submission
         $user = $request['username'];
         $key = $request['password'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "api-database";
+        $db_host = 'SOW-db';
+        $database_user = 'root';
+        $user_passord = 'rewrite';
+        $database_name = 'api_database';
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        if($conn->connect_error)
-        {
-            die("Connection Failed: " . $conn->connect_error);
+        $conn = mysqli_connect($db_host, $database_user, $user_passord, $database_name);
+
+        if ($conn->connect_error) {
+            die("PHP failed to access MySQL: " . $conn->connect_error);
         }
 
-        $query = mysqli_query($conn, "SELECT * FROM `api-credentials` WHERE userName = '$user' AND passCode = '$key'");
+        $query = mysqli_query($conn, "SELECT * FROM `api_credentials` WHERE userName = '$user' AND passCode = '$key'");
         if(mysqli_num_rows($query) > 0)
         {
             $result = array("username"=>$user, "key"=>$key, "Status"=>"login-true");

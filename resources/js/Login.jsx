@@ -34,6 +34,7 @@ function Login()
 
             /* configure message */
             let login_form = document.getElementById("form1");
+            let video = document.getElementById("video");
             message.style.display = "block";
             message.innerHTML = "Login Sucessfully";
             message.style.backgroundColor = "rgb(6, 133, 6)";
@@ -41,13 +42,18 @@ function Login()
             {
                 message.innerHTML = "";
                 message.style.backgroundColor = "transparent";
-                login_form.style.animation = "Fadeout ease-out 0.5s";
-                setTimeout(() => { window.location.href = '/redirect'; }, 200);
+                login_form.style.animation = "Fadeout ease-out 1s";
+                setTimeout(() => 
+                { 
+                    window.location.href = '/redirect'; login_form.style.display = "none";
+                    video.style.filter = "blur(1px)";
+                }, 1200);
             }, 500);
             
         })
         .fail( function(xhr) 
         { 
+            console.log(xhr.responseText);
             /* configure message */
             message.style.display = "block";
             message.innerHTML = "Login Failed";
@@ -103,7 +109,6 @@ function Login()
             setTimeout(() => { message.innerHTML = ""; message.style.backgroundColor = "transparent"; }, 2000);
         });
     }
-
 
     useEffect(()=> 
     {

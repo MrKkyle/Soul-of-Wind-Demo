@@ -9,21 +9,21 @@ class registerController extends Controller
    public function register(Request $request)
    {
         session_start();
-
+        //User credentials from form submission
         $user = $request['register_username'];
         $key = $request['register_password'];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "api-database";
+        $db_host = 'SOW-db';
+        $database_user = 'root';
+        $user_passord = 'rewrite';
+        $database_name = 'api_database';
 
-        $conn = mysqli_connect($servername, $username, $password, $dbname);
-        if($conn->connect_error)
-        {
-            die("Connection Failed: " . $conn->connect_error);
+        $conn = mysqli_connect($db_host, $database_user, $user_passord, $database_name);
+
+        if ($conn->connect_error) {
+            die("PHP failed to access MySQL: " . $conn->connect_error);
         }
-        $query = "INSERT INTO `api-credentials` (username, passCode) VALUES ('$user', '$key')";
+        $query = "INSERT INTO `api_credentials` (username, passCode) VALUES ('$user', '$key')";
 
         
         if(mysqli_query($conn, $query))
@@ -36,7 +36,6 @@ class registerController extends Controller
             $result = array("username"=>$user, "key"=>$key, "Status"=>"register-false");
             return response()->json($result);
         }
-        
    }
 }
 

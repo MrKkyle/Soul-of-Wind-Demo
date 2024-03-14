@@ -1,0 +1,51 @@
+.sow
+{
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 50%;
+    left: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    animation: Fade-In ease-in 1s;
+    background: linear-gradient(to bottom, #202020, #111119);
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+}
+.wsm
+{
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: Fade-In ease-in 1s;
+    background: linear-gradient(to bottom, #202020, #111119);
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+}
+
+/* Cursor styles */
+:root 
+{
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+  
+body 
+{
+    margin: 0;
+}
+  
+.mask 
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0,0%,0%, 0.9);
+    mask: radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 150px);
+    -webkit-mask: radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 150px);
+}
