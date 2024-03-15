@@ -10,7 +10,7 @@ body
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-    background: linear-gradient(to bottom, #202020, #111119);
+    /* background: linear-gradient(to bottom, #202020, #111119); */
 	position: absolute;
 	margin: 0;
     top: 0;

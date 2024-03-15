@@ -46,7 +46,7 @@ function Login()
                 setTimeout(() => 
                 { 
                     window.location.href = '/redirect'; login_form.style.display = "none";
-                    video.style.filter = "blur(1px)";
+                    video.style.filter = "blur(0px)";
                 }, 1200);
             }, 500);
             
