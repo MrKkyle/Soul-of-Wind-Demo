@@ -110,16 +110,20 @@ input[type = text], input[type = password], input[type = email]
 
 @keyframes SlideIn 
 {
-    from
-    {
-        left: 15%;
-        opacity: 0;
-    }
-    to 
-    {
-        left: 0%;
-        opacity: 1;
-    }
+    from { left: 15%; opacity: 0; }
+    to { left: 0%; opacity: 1; }
+}
+
+@keyframes FadeIn 
+{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes FadeOut 
+{
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 .return-button 

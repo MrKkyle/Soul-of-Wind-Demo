@@ -6,13 +6,8 @@ function Background(props)
 {
     return (
         <>
-            <div className = "background" style = {{backgroundImage: `url(${props.image})`}} />
+            <div className = "background" />
         </>
     );
 }
-
-Background.defaultProps = 
-{
-    image: ""
-};
 export default Background;
