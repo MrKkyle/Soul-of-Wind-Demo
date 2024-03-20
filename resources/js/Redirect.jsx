@@ -26,68 +26,69 @@ function Redirect()
             mask.style.setProperty('--mouse-y', y + '%'); 
         });
 
-        /* Javascript to fade-In the elements when the page loads */
 
         /* Javascript for the changing of the elements */
         let sow = document.querySelector(".sow");
         let wsm = document.querySelector(".wsm");
+        let title_sow = document.querySelector(".title-sow");
+        let title_wsm = document.querySelector(".title-wsm");
 
         sow.addEventListener('mouseover', () =>
         {
+            
             /* Change the background */
-            let background = document.querySelector(".background"); let title = document.querySelector(".title-sow");
-            let hidden_sow = document.querySelector(".hidden-sow");
-            mask.style.mask = "radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 700px)";
-            hidden_sow.style.animation = "FadeIn ease-in 0.5s"; background.style.filter = "blur(4px)";
-            background.style.animation = "FadeIn ease-in 0.5s"; title.style.animation = "FadeOut ease-out 0.5s";
-            background.style.backgroundImage = `url(${sow_image})`; 
-
-            setTimeout(() => { title.style.display = "none"; hidden_sow.style.display = "block"; }, 500);
+            sow.style.animation = "blur-in ease-in 0.5s"; title_sow.style.animation = "width-out ease 0.5s";
+            setTimeout(() => { sow.style.filter = "blur(0px)"; title_sow.style.width = "100%"; }, 500);
 
             sow.addEventListener('mouseout', () =>
             {
-                /* Change the background */
-                background.style.animation = "FadeOut ease-in 0.5s"; background.style.filter = "blur(0px)";
-                background.style.backgroundImage = "none"; hidden_sow.style.animation = "FadeOut ease-out 0.5s";
-                title.style.animation = "FadeIn ease-in 0.5s";
-
-                setTimeout(() => { title.style.display = "block"; hidden_sow.style.display = "none"; }, 500);
+                sow.style.animation = "blur-out ease-out 0.5s"; title_sow.style.animation = "width-in ease 0.5s";
+                setTimeout(() => { sow.style.filter = "blur(3px)"; title_sow.style.width = "fit-content"; }, 500); 
             });
-
-
         });
 
-        sow.addEventListener('click', () =>
-        {
-            window.location.href = '/soul-of-wind'; 
+        sow.addEventListener('click', () => 
+        { 
+            let background = document.querySelector(".background"); 
+            background.style.backgroundImage = `url(${sow_image})`; sow.style.pointerEvents = "none";
+            wsm.style.animation = "FadeOut ease-out 1s"; sow.style.animation = "slide_left_center ease-in 1s";
+            
+            setTimeout(() =>
+            {
+                sow.style.animation = "maximize ease-in 2.3s"; wsm.style.display = "none";
+                background.style.filter = "blur(2px)";
+            }, 1000);
+
+            setTimeout(() => { sow.style.display = "none"; window.location.href = '/soul-of-wind'; }, 3000);
         });
 
         wsm.addEventListener('mouseover', () =>
         {
+            
             /* Change the background */
-            let background = document.querySelector(".background"); let title = document.querySelector(".title-wsm");
-            let hidden_sow = document.querySelector(".hidden-wsm");
-            mask.style.mask = "radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 700px)";
-            hidden_sow.style.animation = "FadeIn ease-in 0.5s"; background.style.filter = "blur(4px)";
-            background.style.animation = "FadeIn ease-in 0.5s"; title.style.animation = "FadeOut ease-out 0.5s";
-            background.style.backgroundImage = `url(${wsm_image})`; 
-
-            setTimeout(() => { title.style.display = "none"; hidden_sow.style.display = "block"; }, 500);
+            wsm.style.animation = "blur-in ease-in 0.5s"; title_wsm.style.animation = "width-out ease 0.5s";
+            setTimeout(() => { wsm.style.filter = "blur(0px)"; title_wsm.style.width = "100%"; }, 500);
 
             wsm.addEventListener('mouseout', () =>
             {
-                /* Change the background */
-                background.style.animation = "FadeOut ease-in 0.5s"; background.style.filter = "blur(0px)";
-                background.style.backgroundImage = "none"; hidden_sow.style.animation = "FadeOut ease-out 0.5s";
-                title.style.animation = "FadeIn ease-in 0.5s";
-
-                setTimeout(() => { title.style.display = "block"; hidden_sow.style.display = "none"; }, 500);
+                wsm.style.animation = "blur-out ease-out 0.5s"; title_wsm.style.animation = "width-in ease 0.5s";
+                setTimeout(() => { wsm.style.filter = "blur(3px)"; title_wsm.style.width = "fit-content"; }, 500); 
             });
         });
 
-        wsm.addEventListener('click', () =>
-        {
-            window.location.href = '/wind-soul-melody'; 
+        wsm.addEventListener('click', () => 
+        { 
+            let background = document.querySelector(".background"); 
+            background.style.backgroundImage = `url(${wsm_image})`; 
+            sow.style.animation = "FadeOut ease-out 1s"; wsm.style.animation = "slide_right_center ease-in 1s";
+            wsm.style.pointerEvents = "none";
+            setTimeout(() =>
+            {
+                wsm.style.animation = "maximize ease-in 2.3s"; sow.style.display = "none";
+                background.style.filter = "blur(1px)";
+            }, 1000);
+
+            setTimeout(() => { wsm.style.display = "none"; window.location.href = '/wind-soul-melody'; }, 3000);
         });        
 
     }, []);
@@ -98,19 +99,9 @@ function Redirect()
             <div className = "mask" />
             <div className = "main-containers sow">
                 <div className = "title-sow">Soul of Wind</div>
-                <div className = "hidden-sow">
-                    <div className = "hidden-title">Soul of Wind</div>
-                    <div className = "hidden-description">This is the description</div>
-                    <button className = "hidden-links" href = "" target = "_blank">Youtube</button>
-                </div>
             </div>
             <div className = "main-containers wsm">
                 <div className = "title-wsm">Winds Soul Melody</div>
-                <div className = "hidden-wsm">
-                    <div className = "hidden-title">Winds Soul Meledy</div>
-                    <div className = "hidden-description">This is the description</div>
-                    <button className = "hidden-links" href = "" target = "_blank">Youtube</button>
-                </div>
             </div>
         </div>
     );

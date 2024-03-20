@@ -24,7 +24,7 @@ function SoulOfWind()
 
     useEffect(()=> 
     {
-        
+        /*
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $.post( "http://localhost:8000/worker",[],[], 'json')
         .done(function( _data) 
@@ -36,27 +36,26 @@ function SoulOfWind()
         { 
             alert(xhr.responseText)
         });
+        */
 
         let overlay_open = document.getElementById("open"); let overlay_close = document.getElementById("close");
-        let yt = document.querySelector(".youtube"); let sp = document.querySelector(".spotify"); let sc = document.querySelector(".sound-cloud");
-        let audio = document.querySelector(".audio-player"); let slide_select = document.getElementById("slide-select");
-        overlay_open.addEventListener("click", () =>
-        {
-            yt.style.display = "none"; sp.style.display = "none"; sc.style.display = "none";
-            audio.style.display = "none"; slide_select.style.display = "none";
-        });
+        let open = document.getElementById("open"); let _return = document.getElementById("return");
+        overlay_open.addEventListener("click", () => { open.style.display = "none"; _return.style.display = "none"; });
 
         overlay_close.addEventListener("click", () =>
         {
-            yt.style.display = "block"; sp.style.display = "block"; sc.style.display = "block";
-            audio.style.display = "grid"; slide_select.style.display = "block";
+            setTimeout(() => { open.style.display = "block"; _return.style.display = "block"; }, 500)
+        });
+
+        _return.addEventListener("click", () =>
+        {
+            window.location.href = "/redirect";
         });
 
     }, []);
 
     return (
         <>
-            <SnowEffect />
             <Overlay_Navigation />
 
             <Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
@@ -65,6 +64,7 @@ function SoulOfWind()
             Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief" Text6 = "Thunder Sounds" 
             Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>            
             
+            <button id = "return">Return</button>
             
         </>
     );

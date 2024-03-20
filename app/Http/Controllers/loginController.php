@@ -23,13 +23,12 @@ class loginController extends Controller
         $user_passord = 'rewrite';
         $database_name = 'api_database';
 
+        //Database connection and query
         $conn = mysqli_connect($db_host, $database_user, $user_passord, $database_name);
-
-        if ($conn->connect_error) {
-            die("PHP failed to access MySQL: " . $conn->connect_error);
-        }
-
+        if ($conn->connect_error) { die("PHP failed to access MySQL: " . $conn->connect_error);}
         $query = mysqli_query($conn, "SELECT * FROM `api_credentials` WHERE userName = '$user' AND passCode = '$key'");
+
+        //Returns the results
         if(mysqli_num_rows($query) > 0)
         {
             $result = array("username"=>$user, "key"=>$key, "Status"=>"login-true");

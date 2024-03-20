@@ -42,6 +42,7 @@
     transition-duration: .5s;
     color: #f0f8ff;
     border-radius: 5px;
+    animation: FadeIn ease-in 1s;
 }
 .modal-container:hover 
 {
