@@ -36,14 +36,12 @@ function Redirect()
         sow.addEventListener('mouseover', () =>
         {
             
-            /* Change the background */
-            sow.style.animation = "blur-in ease-in 0.5s"; title_sow.style.animation = "width-out ease 0.5s";
-            setTimeout(() => { sow.style.filter = "blur(0px)"; title_sow.style.width = "100%"; }, 500);
 
             sow.addEventListener('mouseout', () =>
             {
-                sow.style.animation = "blur-out ease-out 0.5s"; title_sow.style.animation = "width-in ease 0.5s";
-                setTimeout(() => { sow.style.filter = "blur(3px)"; title_sow.style.width = "fit-content"; }, 500); 
+                //title_sow.style.background = "linear-gradient( to bottom, rgba(128, 128, 128, 0.554), rgba(0, 0, 0, 0.261))";
+                //title_sow.style.animation = "maximise ease-in 1s";
+                //setTimeout(() => { title_sow.style.width = "100%"; title_sow.style.eight = "100%"; title_sow.style.transform = "translate(-50%, -50%)"; }, 1000); 
             });
         });
 
@@ -65,14 +63,10 @@ function Redirect()
         wsm.addEventListener('mouseover', () =>
         {
             
-            /* Change the background */
-            wsm.style.animation = "blur-in ease-in 0.5s"; title_wsm.style.animation = "width-out ease 0.5s";
-            setTimeout(() => { wsm.style.filter = "blur(0px)"; title_wsm.style.width = "100%"; }, 500);
 
             wsm.addEventListener('mouseout', () =>
             {
-                wsm.style.animation = "blur-out ease-out 0.5s"; title_wsm.style.animation = "width-in ease 0.5s";
-                setTimeout(() => { wsm.style.filter = "blur(3px)"; title_wsm.style.width = "fit-content"; }, 500); 
+
             });
         });
 

@@ -21,41 +21,39 @@ body
 .title-sow, .title-wsm 
 {
     position: relative;
-    width: fit-content;
+    width: 60%;
     padding-left: 10px;
     padding-right: 10px;
-    height: 30px;
-    font-size: 16px;
-    color:aliceblue;
+    height: auto;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
     left: 50%;
-    top: 50%;
+    top: 5%;
     transform: translate(-50%, -50%);
     text-align: center;
     opacity: 1;
-    background: linear-gradient( to bottom, grey, black);
+    background: linear-gradient( to bottom, rgb(128 128 128 / 24%), rgb(0 0 0 / 52%));
+    animation: Slideup ease-in 1.5s;
 }
 .sow 
 {
     left: 0%;
     top: 50%;
     background-image: url(../media/backgrounds/SoulofWind.jpg);
-    filter: blur(3px);
     z-index:5;
 }
 .wsm
 {
-
     left: 50%;
     top: 50%;
     background-image: url(../media/backgrounds/WindSoulMelody.jpg);
-    filter: blur(3px);
     z-index:5;
 }
 
 @keyframes Slideup 
 {
     from { top: 15%; opacity: 0; }
-    to { top: 0%; opacity: 1;}
+    to { top: 5%; opacity: 1;}
 }
 @keyframes Slideright 
 {
@@ -81,18 +79,13 @@ body
     to { left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; }
 }
 
-@keyframes blur-in { to { filter: blur(1px); } }
-@keyframes blur-out { to { filter: blur(3px); } }
-@keyframes width-in 
-{ 
-    from { width: 100%;}
-    to { width: fit-content; } 
+@keyframes maximizer
+{
+    to { left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; }
 }
-@keyframes width-out 
-{ 
-    from { width: fit-content; }
-    to { width: 100%; } 
-}
+
+
+
 
 
 /* Cursor styles */
