@@ -47,14 +47,14 @@ function Redirect()
 
         sow.addEventListener('click', () => 
         { 
-            let background = document.querySelector(".background"); 
-            background.style.backgroundImage = `url(${sow_image})`; sow.style.pointerEvents = "none";
-            wsm.style.animation = "FadeOut ease-out 1s"; sow.style.animation = "slide_left_center ease-in 1s";
-            
+            let background = document.querySelector(".background"); let hidden_sow = document.querySelector(".hidden-sow");
+            background.style.backgroundImage = `url(${sow_image})`; 
+            wsm.style.animation = "FadeOut ease-out 1s"; sow.style.animation = "FadeOut ease-out 1s";
+            sow.style.pointerEvents = "none";
             setTimeout(() =>
             {
-                sow.style.animation = "maximize ease-in 2.3s"; wsm.style.display = "none";
-                background.style.filter = "blur(2px)";
+                wsm.style.display = "none"; sow.style.display = "none";
+                background.style.filter = "blur(0.5px)"; hidden_sow.style.display = "block";
             }, 1000);
 
             setTimeout(() => { sow.style.display = "none"; window.location.href = '/soul-of-wind'; }, 3000);
@@ -62,8 +62,7 @@ function Redirect()
 
         wsm.addEventListener('mouseover', () =>
         {
-            
-
+        
             wsm.addEventListener('mouseout', () =>
             {
 
@@ -81,9 +80,6 @@ function Redirect()
                 sow.style.display = "none"; wsm.style.display = "none";
                 background.style.filter = "blur(0.5px)"; hidden_wsm.style.display = "block";
             }, 1000);
-
-
-            //setTimeout(() => { wsm.style.display = "none"; window.location.href = '/wind-soul-melody'; }, 3000);
         });        
 
     }, []);
@@ -92,6 +88,7 @@ function Redirect()
         <div className = "redirect">
             <Background />
             <div className = "mask" />
+            <div className = "redirect-title">Select your destination</div>
             <div className = "main-containers sow">
                 <div className = "title-sow">Soul of Wind</div>
             </div>
@@ -101,10 +98,18 @@ function Redirect()
 
             <div className = "hidden-wsm">
                 <div className = "hidden-description">abc123isdjnsdocusodcbsjcb</div>
-                <button className = "hidden-links sound-cloud">sound cloud</button>
-                <button className = "hidden-links spotify">spotify</button>
-                <button className = "hidden-links youtube">youtube</button>
-                <button className = "hidden-redirect">redirect me</button>
+                <button className = "hidden-links sound-cloud">Sound Cloud</button>
+                <button className = "hidden-links spotify">Spotify</button>
+                <button className = "hidden-links youtube">Youtube</button>
+                <button className = "hidden-redirect">Redirect me</button>
+            </div>
+
+            <div className = "hidden-sow">
+                <div className = "hidden-description">abc123isdjnsdocusodcbsjcb</div>
+                <button className = "hidden-links sound-cloud">Sound Cloud</button>
+                <button className = "hidden-links spotify">Spotify</button>
+                <button className = "hidden-links youtube">Youtube</button>
+                <button className = "hidden-redirect">Redirect me</button>
             </div>
         </div>
     );
