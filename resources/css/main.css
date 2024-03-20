@@ -40,19 +40,116 @@ body
     left: 0%;
     top: 50%;
     background-image: url(../media/backgrounds/SoulofWind.jpg);
-    z-index:5;
+    z-index: 5;
 }
 .wsm
 {
     left: 50%;
     top: 50%;
     background-image: url(../media/backgrounds/WindSoulMelody.jpg);
-    z-index:5;
+    z-index: 5;
+}
+.hidden-wsm, .hidden-sow
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient( to bottom, rgb(128 128 128 / 24%), rgb(0 0 0 / 52%));
+    z-index: 5;
+    font-family: system-ui;
+    text-align: center;
+    animation: Slideright ease-in 1s;
+}
+.hidden-description 
+{
+    position: relative;
+    display: block;
+    width: 45%;
+    height: 30%;
+    overflow: auto;
+    padding: 20px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    background: linear-gradient( to bottom, rgb(128 128 128 / 24%), rgb(0 0 0 / 52%) );
+    
+    animation: Slideup ease-in 1s;
+    animation-delay: 1s;
+}
+.hidden-links 
+{
+    position: relative;
+    display: block;
+    width: fit-content;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 130px;
+    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+
+}
+.youtube 
+{
+    background: linear-gradient(to bottom, #a71818, rgb(255 0 0));
+    animation: Slideup2 ease-in 1s;
+    animation-delay: 2.5s;
+}
+.spotify
+{
+    background: linear-gradient(to bottom, rgb(8 133 19), rgb(0 255 8));
+    animation: Slideup3 ease-in 1s;
+    animation-delay: 3s;
+}
+.sound-cloud
+{
+    background: linear-gradient(to bottom, #bb4c09, rgb(255 47 0));
+    animation: Slideup3 ease-in 1s;
+    animation-delay: 3.5s;
+}
+.hidden-redirect 
+{
+    position: relative;
+    display: block;
+    width: fit-content;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+
+    animation: Slideup4 ease-in 1s;
+    animation-delay: 4s;
 }
 
 @keyframes Slideup 
 {
-    from { top: 15%; opacity: 0; }
+    from { top: 0%; opacity: 0; }
+    to { top: 10%; opacity: 1;}
+}
+@keyframes Slideup2
+{
+    from { top: 0%; opacity: 0; }
+    to { top: 5%; opacity: 1;}
+}
+@keyframes Slideup3 
+{
+    from { top: 0%; opacity: 0; }
+    to { top: 5%; opacity: 1;}
+}
+@keyframes Slideup4 
+{
+    from { top: 0%; opacity: 0; }
     to { top: 5%; opacity: 1;}
 }
 @keyframes Slideright 
@@ -84,10 +181,6 @@ body
     to { left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; }
 }
 
-
-
-
-
 /* Cursor styles */
 :root 
 {
@@ -100,7 +193,7 @@ body
     width: 100vw;
     height: 100vh;
     background-color: hsla(0,0%,0%, 0.9);
-    mask: radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 750px);
+    mask: radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,black 650px);
     position: relative;
     z-index: 5;
 }

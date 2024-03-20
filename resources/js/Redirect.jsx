@@ -72,17 +72,18 @@ function Redirect()
 
         wsm.addEventListener('click', () => 
         { 
-            let background = document.querySelector(".background"); 
+            let background = document.querySelector(".background"); let hidden_wsm = document.querySelector(".hidden-wsm");
             background.style.backgroundImage = `url(${wsm_image})`; 
-            sow.style.animation = "FadeOut ease-out 1s"; wsm.style.animation = "slide_right_center ease-in 1s";
+            sow.style.animation = "FadeOut ease-out 1s"; wsm.style.animation = "FadeOut ease-out 1s";
             wsm.style.pointerEvents = "none";
             setTimeout(() =>
             {
-                wsm.style.animation = "maximize ease-in 2.3s"; sow.style.display = "none";
-                background.style.filter = "blur(1px)";
+                sow.style.display = "none"; wsm.style.display = "none";
+                background.style.filter = "blur(0.5px)"; hidden_wsm.style.display = "block";
             }, 1000);
 
-            setTimeout(() => { wsm.style.display = "none"; window.location.href = '/wind-soul-melody'; }, 3000);
+
+            //setTimeout(() => { wsm.style.display = "none"; window.location.href = '/wind-soul-melody'; }, 3000);
         });        
 
     }, []);
@@ -96,6 +97,14 @@ function Redirect()
             </div>
             <div className = "main-containers wsm">
                 <div className = "title-wsm">Winds Soul Melody</div>
+            </div>
+
+            <div className = "hidden-wsm">
+                <div className = "hidden-description">abc123isdjnsdocusodcbsjcb</div>
+                <button className = "hidden-links sound-cloud">sound cloud</button>
+                <button className = "hidden-links spotify">spotify</button>
+                <button className = "hidden-links youtube">youtube</button>
+                <button className = "hidden-redirect">redirect me</button>
             </div>
         </div>
     );
