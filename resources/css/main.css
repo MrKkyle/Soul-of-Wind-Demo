@@ -21,7 +21,7 @@ body
 .redirect-title 
 {
     position: absolute;
-    display: block;
+    display: none;
     border-bottom: 1px solid white;
     font-family: system-ui;
     font-size: 30px;
@@ -36,7 +36,7 @@ body
 .title-sow, .title-wsm 
 {
     position: relative;
-    display: block;
+    display: none;
     width: 60%;
     padding-left: 10px;
     padding-right: 10px;
@@ -49,9 +49,7 @@ body
     opacity: 1;
     color: white;
     border-bottom: 1px solid white;
-    background: linear-gradient( to bottom, rgb(128 128 128 / 0%), rgb(0 0 0 / 9%));
     animation: FadeIn ease-in 1s;
-    animation-delay: 2s;
 }
 .sow 
 {
@@ -94,9 +92,7 @@ body
     left: 50%;
     transform: translate(-50%);
     background: linear-gradient( to bottom, rgb(128 128 128 / 24%), rgb(0 0 0 / 52%) );
-    
-    animation: Slideup ease-in 1s;
-    animation-delay: 1s;
+    animation: FadeIn ease-in 1s;
 }
 .hidden-links 
 {
@@ -117,25 +113,12 @@ body
     text-decoration: none;
     float: left;
     margin-left: 10px;
+    animation: FadeIn ease-in 1s;
 }
-.youtube 
-{
-    background: linear-gradient(to bottom, #a71818, rgb(255 0 0));
-    animation: Slideup2 ease-in 1s;
-    animation-delay: 2.5s;
-}
-.spotify
-{
-    background: linear-gradient(to bottom, rgb(8 133 19), rgb(0 255 8));
-    animation: Slideup3 ease-in 1s;
-    animation-delay: 3s;
-}
-.sound-cloud
-{
-    background: linear-gradient(to bottom, #bb4c09, rgb(255 47 0));
-    animation: Slideup3 ease-in 1s;
-    animation-delay: 3.5s;
-}
+.youtube { background: linear-gradient(to bottom, #a71818, rgb(255 0 0)); }
+.spotify { background: linear-gradient(to bottom, rgb(8 133 19), rgb(0 255 8)); }
+.sound-cloud { background: linear-gradient(to bottom, #bb4c09, rgb(255 47 0)); }
+
 .hidden-redirect 
 {
     position: absolute;
@@ -149,7 +132,6 @@ body
     left: 50%;
     transform: translate(-50%);
     animation: Slideup4 ease-in 1s;
-    animation-delay: 4s;
 }
 
 @keyframes Slideup 

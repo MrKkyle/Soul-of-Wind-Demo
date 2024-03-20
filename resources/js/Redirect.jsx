@@ -11,8 +11,9 @@ function Redirect()
 
     useEffect(() => 
     {
-        // Get a reference to the .mask element.
-        const mask = document.querySelector('.mask');
+        const mask = document.querySelector('.mask'); let redirect_title = document.querySelector(".redirect-title");
+        let sow = document.querySelector(".sow"); let wsm = document.querySelector(".wsm");
+        let title_sow = document.querySelector(".title-sow"); let title_wsm = document.querySelector(".title-wsm");
 
         // Add an event to catch mouse movements.
         document.addEventListener('pointermove', (pos) => 
@@ -28,10 +29,7 @@ function Redirect()
 
 
         /* Javascript for the changing of the elements */
-        let sow = document.querySelector(".sow");
-        let wsm = document.querySelector(".wsm");
-        let title_sow = document.querySelector(".title-sow");
-        let title_wsm = document.querySelector(".title-wsm");
+        setTimeout(() => {title_sow.style.display = "block"; title_wsm.style.display = "block"; redirect_title.style.display = "block";}, 3000);
 
         sow.addEventListener('mouseover', () =>
         {
@@ -39,25 +37,21 @@ function Redirect()
 
             sow.addEventListener('mouseout', () =>
             {
-                //title_sow.style.background = "linear-gradient( to bottom, rgba(128, 128, 128, 0.554), rgba(0, 0, 0, 0.261))";
-                //title_sow.style.animation = "maximise ease-in 1s";
-                //setTimeout(() => { title_sow.style.width = "100%"; title_sow.style.eight = "100%"; title_sow.style.transform = "translate(-50%, -50%)"; }, 1000); 
+                
             });
         });
 
         sow.addEventListener('click', () => 
         { 
             let background = document.querySelector(".background"); let hidden_sow = document.querySelector(".hidden-sow");
-            background.style.backgroundImage = `url(${sow_image})`; 
+            background.style.backgroundImage = `url(${sow_image})`; redirect_title.style.display = "none";
             wsm.style.animation = "FadeOut ease-out 1s"; sow.style.animation = "FadeOut ease-out 1s";
             sow.style.pointerEvents = "none";
             setTimeout(() =>
             {
                 wsm.style.display = "none"; sow.style.display = "none";
-                background.style.filter = "blur(0.5px)"; hidden_sow.style.display = "block";
+                background.style.filter = "blur(2px)"; hidden_sow.style.display = "block";
             }, 1000);
-
-            setTimeout(() => { sow.style.display = "none"; window.location.href = '/soul-of-wind'; }, 3000);
         });
 
         wsm.addEventListener('mouseover', () =>
@@ -72,7 +66,7 @@ function Redirect()
         wsm.addEventListener('click', () => 
         { 
             let background = document.querySelector(".background"); let hidden_wsm = document.querySelector(".hidden-wsm");
-            background.style.backgroundImage = `url(${wsm_image})`; 
+            background.style.backgroundImage = `url(${wsm_image})`; redirect_title.style.display = "none";
             sow.style.animation = "FadeOut ease-out 1s"; wsm.style.animation = "FadeOut ease-out 1s";
             wsm.style.pointerEvents = "none";
             setTimeout(() =>
