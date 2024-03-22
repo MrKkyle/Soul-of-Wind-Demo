@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect } from "react";
 import Background from "./components/Background";
+import Fireflies from './components/Fireflies';
+import FallingLeaves from './components/FallingLeaves';
 import sow_image from '../media/backgrounds/SoulofWind.jpg';
-import wsm_image from '../media/backgrounds/WindSoulMelody.jpg';
+import wsm_image from '../media/backgrounds/Screenshot4.png';
 
 import '../css/main.css';
 
@@ -27,87 +29,57 @@ function Redirect()
             mask.style.setProperty('--mouse-y', y + '%'); 
         });
 
+        let pages = document.querySelectorAll(".page");
+        const translateAmount = 100; 
+        let translate = 0;
 
-        /* Javascript for the changing of the elements */
-        setTimeout(() => {title_sow.style.display = "block"; title_wsm.style.display = "block"; redirect_title.style.display = "block";}, 3000);
-
-        sow.addEventListener('mouseover', () =>
+        function slide(direction)
         {
-            
+            direction === "next" ? translate -= translateAmount : translate += translateAmount;
+            pages.forEach
+            (
+                pages => (pages.style.transform = `translateX(${translate}%)`)
+            );
+        }
 
-            sow.addEventListener('mouseout', () =>
-            {
-                
-            });
-        });
-
-        sow.addEventListener('click', () => 
-        { 
-            let background = document.querySelector(".background"); let hidden_sow = document.querySelector(".hidden-sow");
-            background.style.backgroundImage = `url(${sow_image})`; redirect_title.style.display = "none";
-            wsm.style.animation = "FadeOut ease-out 1s"; sow.style.animation = "FadeOut ease-out 1s";
-            sow.style.pointerEvents = "none";
-            setTimeout(() =>
-            {
-                wsm.style.display = "none"; sow.style.display = "none";
-                background.style.filter = "blur(2px)"; hidden_sow.style.display = "block";
-            }, 1000);
-        });
-
-        wsm.addEventListener('mouseover', () =>
-        {
-        
-            wsm.addEventListener('mouseout', () =>
-            {
-
-            });
-        });
-
-        wsm.addEventListener('click', () => 
-        { 
-            let background = document.querySelector(".background"); let hidden_wsm = document.querySelector(".hidden-wsm");
-            background.style.backgroundImage = `url(${wsm_image})`; redirect_title.style.display = "none";
-            sow.style.animation = "FadeOut ease-out 1s"; wsm.style.animation = "FadeOut ease-out 1s";
-            wsm.style.pointerEvents = "none";
-            setTimeout(() =>
-            {
-                sow.style.display = "none"; wsm.style.display = "none";
-                background.style.filter = "blur(0.5px)"; hidden_wsm.style.display = "block";
-            }, 1000);
-        });        
+        /* Onclicks for the pages buttons */
+        let prev = document.getElementById("prev"); let next = document.getElementById("next");
+        prev.addEventListener("click", () => { slide('prev'); })
+        next.addEventListener("click", () => { slide('next'); })
+      
 
     }, []);
 
     return (
         <div className = "redirect">
-            <Background />
+            <Background display1 = "block" display2 = "block" display3 = "block" display4 = "block" text1 = "here am i"/>
             <div className = "mask" />
-            <div className = "redirect-title">Select your destination</div>
-            <div className = "main-containers sow">
-                <div className = "title-sow">Soul of Wind</div>
-            </div>
-            <div className = "main-containers wsm">
-                <div className = "title-wsm">Winds Soul Melody</div>
+
+
+            <div className ="container_alpha">
+                <div className ="pages">
+                    <div className="page one">
+                        <Fireflies />
+                        <div className = "redirect-title">PAGE 1</div>
+                        <div>
+                            <button className = "hidden-links" id = "next">Next</button>
+                        </div>
+                    </div>
+                    <div className="page two">
+                        <FallingLeaves />
+                        <div className = "redirect-title">PAGE 2</div>
+                        <div>
+                            <button className = "hidden-links" id = "prev">Previous</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className = "hidden-wsm">
-                <div className = "hidden-description">abc123isdjnsdocusodcbsjcb</div>
-                <button className = "hidden-links sound-cloud">Sound Cloud</button>
-                <button className = "hidden-links spotify">Spotify</button>
-                <button className = "hidden-links youtube">Youtube</button>
-                <button className = "hidden-redirect">Redirect me</button>
-            </div>
-
-            <div className = "hidden-sow">
-                <div className = "hidden-description">abc123isdjnsdocusodcbsjcb</div>
-                <button className = "hidden-links sound-cloud">Sound Cloud</button>
-                <button className = "hidden-links spotify">Spotify</button>
-                <button className = "hidden-links youtube">Youtube</button>
-                <button className = "hidden-redirect">Redirect me</button>
-            </div>
+            
         </div>
     );
 
 }
 
 export default Redirect; 
+
