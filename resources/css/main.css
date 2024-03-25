@@ -188,7 +188,6 @@ body
     width: 300%;
     height: 100%;
     box-sizing: border-box;
-    background-color: white;
     z-index: 5;
 }
 
@@ -206,7 +205,7 @@ body
 }
 .one
 {
-    background-image: url(../media/backgrounds/SoulofWind.jpg);
+
     background-size: cover;
     background-position: center;
 }
@@ -218,18 +217,17 @@ body
 }
 .three
 {
-    background-image: url(../media/backgrounds/Screenshot1.png);
+    background-image: url(../media/backgrounds/Screenshot5.png);
     background-size: cover;
     background-position: center;
 }
 
-.prev,
-.next 
+.prev, .next 
 {
     cursor: pointer;
     top: 4%;
     width: 10%;
-    height: 270px;
+    height: 50%;
     padding: 16px;
     margin-top: -50px;
     position: relative;
@@ -237,9 +235,11 @@ body
     font-weight: bold;
     font-size: 40px;
     border: none;
-    background-color: #0000007d;
+    background-color: #ffffff1e;
     border-radius: 0 3px 3px 0;
     z-index: 6;
+    transition-duration: 0.4s;
+    animation: FadeIn ease-in 1s;
 }
 
 .next 
