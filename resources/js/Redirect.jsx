@@ -34,6 +34,13 @@ function Redirect()
         });
         */
 
+        //Scripts for the redirect onclicks
+        let sow = document.querySelector(".sow");
+        let wsm = document.querySelector(".wsm");
+
+        sow.addEventListener("click", () => { window.location.href = "/soul-of-wind" });
+        wsm.addEventListener("click", () => { window.location.href = "/winds-soul-melody" });
+
         //Scripts for the Slide change effect 
         let pages = document.querySelectorAll(".page");
         const translateAmount = 100; 
@@ -139,17 +146,19 @@ function Redirect()
                     <div className="page two">
                         <FallingLeaves /> 
                         <div className = "nav-top"></div>
-                        <div className = "nav-bottom"></div>
-                        <div className = "redirect-title">WINDS SOUL MELODY</div>
+                        <div className = "nav-bottom"><button className = "hidden-links wsm" style ={{top: '8px', background: 'linear-gradient(to bottom, #5f1162, #171850)'}}>Go</button></div>
+                        <div className = "redirect-title">Winds Soul Melody</div>
                         <button className = "next" style = {{right: '0px', top: '33%', position: 'absolute'}} id = "next2">❯</button>
                         <button className = "prev" style={{display: 'none', position: 'absolute', top: '33%', left: '0'}} id = "prev">❮</button>
+                        
                     </div>
                     <div className="page three">
                         <SnowEffect />
                         <div className = "nav-top"></div>
-                        <div className = "nav-bottom"></div>
-                        <div className = "redirect-title">SOUL OF WIND</div>
+                        <div className = "nav-bottom"><button className = "hidden-links sow" style ={{top: '8px', background: 'linear-gradient(to bottom, #132b29c9, #164458e3)'}}>Go</button></div>
+                        <div className = "redirect-title">Soul of Wind</div>
                         <button className = "prev" style={{left: '-45%'}} id = "prev2">❮</button>
+                        
                     </div>
                 </div>
             </div>

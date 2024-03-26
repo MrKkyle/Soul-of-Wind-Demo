@@ -67,9 +67,9 @@ body
     padding: 2px;
     text-align: center;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
-    width: 100px;
+    width: 130px;
     height: 40px;
     position: relative;
     border: none;
@@ -123,6 +123,7 @@ body
     height: 60px;
     padding: 2px;
     background-color: #000000c4;
+    text-align: center;
     animation: Slide_up 1s ease-in;
 }
 

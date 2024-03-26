@@ -91,7 +91,7 @@ function Slideshow2(props)
                     <h1 className="title"><span className="title-text">{props.Text5}</span></h1>
                 </li>
             </ul>
-            <ul id="slide-select">
+            <ul id="slide-select" style = {{display: 'none'}}>
                 <li className="selector"></li>
                 <li className="selector"></li>
                 <li className="selector"></li>
