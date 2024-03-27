@@ -1,30 +1,26 @@
 .modal1
 {
-	display: block;
-	position: fixed;
-	z-index: 0;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-    background: linear-gradient(to bottom, #202020, #111119);
-	animation: FadeIn ease-in 1s;
+    display: block;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: FadeIn ease-in 1s;
 }
 .modal-content
 {
-	position: relative;
-	background-color: transparent;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
+    position: relative;
+    background-color: transparent;
+    left: 0%;
+    width: 40%;
     height: 100%;
-	opacity: 0.9;
-	text-align: center;
-	z-index: 2;
+    text-align: center;
+    z-index: 2;
+    background-color: #000000d1;
 }
-
 .modal-content:hover
 {
 	opacity: 1;
@@ -32,21 +28,15 @@
 .modal-container
 {
     width: 550px;
-    padding: 16px;
     position: relative;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.1);
-    transition-duration: 0.5s;
-    color: aliceblue;
-
+    transform: translate(-50%,-50%);
+    transition-duration: .5s;
+    color: #f0f8ff;
+    border-radius: 5px;
+    animation: FadeIn ease-in 1s;
 }
-.modal-container:hover 
-{
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
 .modal-content .text 
 {
 	background-color: transparent;
@@ -69,7 +59,7 @@ input[type = text], input[type = password], input[type = email]
     border-top: transparent;
     border-left: transparent;
     border-right: transparent;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #989898;
 	display: inline-block;
 	box-sizing: border-box;
     background-color: transparent;
@@ -110,16 +100,20 @@ input[type = text], input[type = password], input[type = email]
 
 @keyframes SlideIn 
 {
-    from
-    {
-        left: 15%;
-        opacity: 0;
-    }
-    to 
-    {
-        left: 0%;
-        opacity: 1;
-    }
+    from { left: 15%; opacity: 0; }
+    to { left: 0%; opacity: 1; }
+}
+
+@keyframes FadeIn 
+{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes FadeOut 
+{
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 .return-button 
@@ -140,7 +134,7 @@ input[type = text], input[type = password], input[type = email]
 {
 	position: absolute;
 	display: none;
-	left: 0%;
+	right: 0%;
     top: 100%;
     transform: translate(0%, -100%);
 	min-width: 120px;
@@ -153,4 +147,15 @@ input[type = text], input[type = password], input[type = email]
 	background-color: transparent;
 	animation: fadeMessage ease-in-out 2s;
 	z-index: 20;
+}
+.video 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+    filter: blur(5px);
 }

@@ -1,0 +1,6 @@
+*/*/app
+*/*/.github
+*.go
+node_modules
+vendor
+docker-compose

@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR /var/www/
+
+COPY package.json /var/www/
+COPY package-lock.json /var/www/
+
+RUN npm install --legacy-peer-deps
+
+CMD ["npm", "run", "dev"]

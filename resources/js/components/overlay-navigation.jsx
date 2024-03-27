@@ -66,7 +66,7 @@ function Overlay_Navigation(props)
                 <a href = "#">{props.location4}</a>
             </div>
         </div>
-        <span id = "open">open</span>
+        <button id = "open">Open</button>
         <Outlet />
     </>    
     )  

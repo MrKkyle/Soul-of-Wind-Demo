@@ -7,14 +7,12 @@ body
 {
 	height: 100%;
 	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
     background: linear-gradient(to bottom, #202020, #111119);
 	position: absolute;
 	margin: 0;
     top: 0;
     left: 0;
+    animation: FadeIn ease-in 1s;
 }
 .ul 
 {

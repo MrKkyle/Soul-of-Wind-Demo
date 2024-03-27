@@ -1,0 +1,249 @@
+body 
+{
+    margin: 0;
+}
+.main-containers
+{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 50%;
+  
+    animation: Fade-In ease-in 5s;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #202020, #111119);
+    background-position: center;
+    background-size: cover;
+    border: 0.5px solid #4e4c4c;
+    cursor: pointer;
+    animation: FadeIn ease-in 1s;
+}
+.redirect-title 
+{
+    position: absolute;
+    display: none;
+    font-family: system-ui;
+    font-size: 30px;
+    top: 1%;
+    z-index: 6;
+    color: white;
+    animation: FadeIn ease-in 1s;
+    cursor: pointer;
+}
+.title-sow, .title-wsm 
+{
+    position: relative;
+    display: none;
+    width: 60%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    font-size: 20px;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 1;
+    color: white;
+    border-bottom: 1px solid white;
+    animation: FadeIn ease-in 1s;
+}
+.sow 
+{
+    left: 0%;
+    top: 0%;
+    background-image: url(../media/backgrounds/SoulofWind.jpg);
+    z-index: 5;
+}
+.wsm
+{
+    left: 0%;
+    top: 50%;
+    background-image: url(../media/backgrounds/WindSoulMelody.jpg);
+    z-index: 5;
+}
+.hidden-links 
+{
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    position: relative;
+    border: none;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    border-radius: 4px;
+    color: white;
+    transition-duration: 0.4s;
+    background: linear-gradient(to bottom, #202020, #111119);
+    z-index: 2;
+}
+.hidden-links:hover
+{
+	color: rgb(255, 255, 255);
+    box-shadow: 0 0 6px #bbbbbb;
+}
+.nav-top
+{
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding: 2px;
+    background-color: #000000c4;
+    animation: Slide_down ease-in 1s;
+}
+.nav-bottom 
+{
+    position: absolute;
+    display: block;
+    bottom: 0%;
+    width: 100%;
+    height: 60px;
+    padding: 2px;
+    background-color: #000000c4;
+    text-align: center;
+    animation: Slide_up 1s ease-in;
+}
+
+@keyframes Slideup 
+{
+    from { top: 20%; opacity: 0; }
+    to { top: 10%; opacity: 1;}
+}
+@keyframes Slide_down
+{
+    from { top: -10%; opacity: 0; }
+    to { top: 0%; opacity: 1;}
+}
+@keyframes Slide_up
+{
+    from { bottom: -10%; opacity: 01; }
+    to { bottom: 0%; opacity: 1;}
+}
+@keyframes Slideright 
+{
+    from { right: 35%; opacity: 1; }
+    to { right: 0%; opacity: 1;}
+}
+
+@keyframes maximize 
+{
+    from { left: 50%; transform: translate(-50%, -50%); width: 30%; height: 40%; }
+    to { left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; }
+}
+
+
+/* Cursor styles */
+:root 
+{
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+  
+.mask 
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(0,0%,0%, 0.9);
+    mask: radial-gradient( circle at var(--mouse-x) var(--mouse-y), transparent 40px,rgb(149, 55, 55) 650px);
+    position: absolute;
+    z-index: 5;
+}
+
+.container_alpha
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    z-index: 5;
+    animation: FadeIn ease-in 1s;;
+}
+.pages 
+{
+    display: flex;
+    position: fixed;
+    width: 300%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.page 
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.7s;
+    color: white;
+}
+.one
+{
+
+    background-size: cover;
+    background-position: center;
+}
+.two
+{
+    background-image: url(../media/backgrounds/Screenshot4.png);
+    background-size: cover;
+    background-position: top;
+}
+.three
+{
+    background-image: url(../media/backgrounds/Screenshot5.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.prev, .next 
+{
+    cursor: pointer;
+    top: 4%;
+    width: 10%;
+    height: 50%;
+    padding: 16px;
+    margin-top: -50px;
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    border: none;
+    background-color: #ffffff1e;
+    border-radius: 0 3px 3px 0;
+    z-index: 6;
+    transition-duration: 0.4s;
+    animation: FadeIn ease-in 1s;
+}
+
+.next 
+{
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover 
+{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.demo 
+{
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover 
+{
+  opacity: 1;
+}

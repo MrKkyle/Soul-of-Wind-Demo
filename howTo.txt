@@ -61,13 +61,19 @@ mix.styles([
 - Proceed to import your css files in your react component, it should work.
 
 ## How to setup project with docker(recommended)
+- Go to the app's .env file and edit the APP_URL=localhost
+- Go to the vite.config.js file in the root directory and add these lines above the plugins:
+server: {
+        hmr: {
+            host: 'localhost',
+        }
+    },    
+- Finally, proceed to the root directory and enter the command : `./scripts/run.sh`
 
-- Proceed to the soul of wind container and run: `composer install`, which will then fix the error of autoload.php not
-being found 
-- Generate an application encryption key: `php artisan key:generate` , run this on the soul-of-wind container
 
-## Blank Screen error, refuse to retrieve some imports of files
-- Go to /public and remove the hot file
+##Mysqli error
+- Follow this guide, if not already implemented
+- https://thriveread.com/run-docker-php-ext-install-mysqli/
 
 ## Sources:
 - https://www.geeksforgeeks.org/how-to-import-regular-css-file-in-scss-file/
@@ -75,3 +81,4 @@ being found
 - https://laracasts.com/discuss/channels/javascript/react-css-modules-with-laravel-mix
 - https://stackoverflow.com/questions/60145632/how-to-add-a-style-css-to-react-laravel-app
 - https://phoenixnap.com/kb/laravel-docker 
+- https://thriveread.com/run-docker-php-ext-install-mysqli/

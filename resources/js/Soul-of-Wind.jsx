@@ -1,20 +1,8 @@
 import React from 'react';
 import {useEffect} from 'react';
-import Slideshow2 from './components/Slideshow2';
-import SnowEffect from './components/Snow-effect';
-import AudioPlayer from './components/Audio-Player';
 import Overlay_Navigation from './components/overlay-navigation';
 import $ from "jquery";
 
-import image1 from '../media/Slideshow/image_part_011.png'; import image2 from '../media/Slideshow/image_part_012.png';
-import image3 from '../media/Slideshow/image_part_021.png'; import image4 from '../media/Slideshow/image_part_022.png';
-import image5 from '../media/Slideshow/image_part_031.png'; import image6 from '../media/Slideshow/image_part_032.png';
-import image7 from '../media/Slideshow/image_part_041.png'; import image8 from '../media/Slideshow/image_part_042.png';
-import image9 from '../media/Slideshow/image_part_051.png'; import image10 from '../media/Slideshow/image_part_052.png';
-import image11 from '../media/Slideshow/image_part_061.png'; import image12 from '../media/Slideshow/image_part_062.png';
-import image13 from '../media/Slideshow/image_part_071.png'; import image14 from '../media/Slideshow/image_part_072.png';
-import image15 from '../media/Slideshow/image_part_081.png'; import image16 from '../media/Slideshow/image_part_082.png';
-import image17 from '../media/Slideshow/image_part_091.png'; import image18 from '../media/Slideshow/image_part_092.png';
 
 
 
@@ -24,7 +12,7 @@ function SoulOfWind()
 
     useEffect(()=> 
     {
-        
+        /*
         $.ajaxSetup({ xhrFields: { withCredentials: true }, headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $.post( "http://localhost:8000/worker",[],[], 'json')
         .done(function( _data) 
@@ -36,35 +24,29 @@ function SoulOfWind()
         { 
             alert(xhr.responseText)
         });
+        */
 
         let overlay_open = document.getElementById("open"); let overlay_close = document.getElementById("close");
-        let yt = document.querySelector(".youtube"); let sp = document.querySelector(".spotify"); let sc = document.querySelector(".sound-cloud");
-        let audio = document.querySelector(".audio-player"); let slide_select = document.getElementById("slide-select");
-        overlay_open.addEventListener("click", () =>
-        {
-            yt.style.display = "none"; sp.style.display = "none"; sc.style.display = "none";
-            audio.style.display = "none"; slide_select.style.display = "none";
-        });
+        let open = document.getElementById("open"); let _return = document.getElementById("return");
+        overlay_open.addEventListener("click", () => { open.style.display = "none"; _return.style.display = "none"; });
 
         overlay_close.addEventListener("click", () =>
         {
-            yt.style.display = "block"; sp.style.display = "block"; sc.style.display = "block";
-            audio.style.display = "grid"; slide_select.style.display = "block";
+            setTimeout(() => { open.style.display = "block"; _return.style.display = "block"; }, 500)
+        });
+
+        _return.addEventListener("click", () =>
+        {
+            window.location.href = "/redirect";
         });
 
     }, []);
 
     return (
         <>
-            <SnowEffect />
-            <Overlay_Navigation />
-
-            <Slideshow2 Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
-            Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10} Image6_left = {image11} Image6_right = {image12} 
-            Image7_left = {image13} Image7_right = {image14} Image8_left = {image15} Image8_right = {image16} Image9_left = {image17} Image9_right = {image18}
-            Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief" Text6 = "Thunder Sounds" 
-            Text7 = "Stress Relief" Text8 = "Fantasy Tavern Music" Text9 = "Soul of Wind"/>            
+            <Overlay_Navigation />         
             
+            <button id = "return">Return</button>
             
         </>
     );
