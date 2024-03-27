@@ -1,0 +1,131 @@
+{
+  "resources/js/app.css": {
+    "file": "assets/app-2990e491.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/image_part_011-f56d8d51.png",
+      "assets/image_part_012-1b6a46a0.png",
+      "assets/image_part_021-a8d5bed7.png",
+      "assets/image_part_022-a77a41f0.png",
+      "assets/image_part_031-24d0d951.png",
+      "assets/image_part_032-f77269dc.png",
+      "assets/image_part_041-acf8081b.png",
+      "assets/image_part_042-7859ab47.png",
+      "assets/image_part_051-bed43be9.png",
+      "assets/image_part_052-148e4302.png",
+      "assets/image_part_061-c3897d84.png",
+      "assets/image_part_062-30ced1dd.png",
+      "assets/image_part_071-823a8031.png",
+      "assets/image_part_072-002a6df3.png",
+      "assets/image_part_081-e12e0b0e.png",
+      "assets/image_part_082-3e7eb671.png",
+      "assets/image_part_091-76c7bfc4.png",
+      "assets/image_part_092-dd1bc0d1.png",
+      "assets/return-7c8ef20b.png",
+      "assets/spotify-99a8efca.png",
+      "assets/youtube-e7eb7b10.png",
+      "assets/sound-cloud-001e2489.png"
+    ],
+    "css": [
+      "assets/app-2990e491.css"
+    ],
+    "file": "assets/app-9a2eaeb7.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/media/Slideshow/image_part_011.png": {
+    "file": "assets/image_part_011-f56d8d51.png",
+    "src": "resources/media/Slideshow/image_part_011.png"
+  },
+  "resources/media/Slideshow/image_part_012.png": {
+    "file": "assets/image_part_012-1b6a46a0.png",
+    "src": "resources/media/Slideshow/image_part_012.png"
+  },
+  "resources/media/Slideshow/image_part_021.png": {
+    "file": "assets/image_part_021-a8d5bed7.png",
+    "src": "resources/media/Slideshow/image_part_021.png"
+  },
+  "resources/media/Slideshow/image_part_022.png": {
+    "file": "assets/image_part_022-a77a41f0.png",
+    "src": "resources/media/Slideshow/image_part_022.png"
+  },
+  "resources/media/Slideshow/image_part_031.png": {
+    "file": "assets/image_part_031-24d0d951.png",
+    "src": "resources/media/Slideshow/image_part_031.png"
+  },
+  "resources/media/Slideshow/image_part_032.png": {
+    "file": "assets/image_part_032-f77269dc.png",
+    "src": "resources/media/Slideshow/image_part_032.png"
+  },
+  "resources/media/Slideshow/image_part_041.png": {
+    "file": "assets/image_part_041-acf8081b.png",
+    "src": "resources/media/Slideshow/image_part_041.png"
+  },
+  "resources/media/Slideshow/image_part_042.png": {
+    "file": "assets/image_part_042-7859ab47.png",
+    "src": "resources/media/Slideshow/image_part_042.png"
+  },
+  "resources/media/Slideshow/image_part_051.png": {
+    "file": "assets/image_part_051-bed43be9.png",
+    "src": "resources/media/Slideshow/image_part_051.png"
+  },
+  "resources/media/Slideshow/image_part_052.png": {
+    "file": "assets/image_part_052-148e4302.png",
+    "src": "resources/media/Slideshow/image_part_052.png"
+  },
+  "resources/media/Slideshow/image_part_061.png": {
+    "file": "assets/image_part_061-c3897d84.png",
+    "src": "resources/media/Slideshow/image_part_061.png"
+  },
+  "resources/media/Slideshow/image_part_062.png": {
+    "file": "assets/image_part_062-30ced1dd.png",
+    "src": "resources/media/Slideshow/image_part_062.png"
+  },
+  "resources/media/Slideshow/image_part_071.png": {
+    "file": "assets/image_part_071-823a8031.png",
+    "src": "resources/media/Slideshow/image_part_071.png"
+  },
+  "resources/media/Slideshow/image_part_072.png": {
+    "file": "assets/image_part_072-002a6df3.png",
+    "src": "resources/media/Slideshow/image_part_072.png"
+  },
+  "resources/media/Slideshow/image_part_081.png": {
+    "file": "assets/image_part_081-e12e0b0e.png",
+    "src": "resources/media/Slideshow/image_part_081.png"
+  },
+  "resources/media/Slideshow/image_part_082.png": {
+    "file": "assets/image_part_082-3e7eb671.png",
+    "src": "resources/media/Slideshow/image_part_082.png"
+  },
+  "resources/media/Slideshow/image_part_091.png": {
+    "file": "assets/image_part_091-76c7bfc4.png",
+    "src": "resources/media/Slideshow/image_part_091.png"
+  },
+  "resources/media/Slideshow/image_part_092.png": {
+    "file": "assets/image_part_092-dd1bc0d1.png",
+    "src": "resources/media/Slideshow/image_part_092.png"
+  },
+  "resources/media/return.png": {
+    "file": "assets/return-7c8ef20b.png",
+    "src": "resources/media/return.png"
+  },
+  "resources/media/sound-cloud.png": {
+    "file": "assets/sound-cloud-001e2489.png",
+    "src": "resources/media/sound-cloud.png"
+  },
+  "resources/media/spotify.png": {
+    "file": "assets/spotify-99a8efca.png",
+    "src": "resources/media/spotify.png"
+  },
+  "resources/media/youtube.png": {
+    "file": "assets/youtube-e7eb7b10.png",
+    "src": "resources/media/youtube.png"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-5ceab8ef.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}

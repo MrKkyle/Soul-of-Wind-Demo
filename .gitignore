@@ -1,4 +1,4 @@
-/.phpunit.cache
+vendor
 node_modules
 vendor
 /public/build
