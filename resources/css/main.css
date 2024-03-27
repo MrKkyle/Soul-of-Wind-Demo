@@ -22,13 +22,13 @@ body
 {
     position: absolute;
     display: none;
-
     font-family: system-ui;
     font-size: 30px;
     top: 1%;
     z-index: 6;
     color: white;
     animation: FadeIn ease-in 1s;
+    cursor: pointer;
 }
 .title-sow, .title-wsm 
 {
@@ -84,24 +84,6 @@ body
 {
 	color: rgb(255, 255, 255);
     box-shadow: 0 0 6px #bbbbbb;
-}
-.youtube { background: linear-gradient(to bottom, #a71818, rgb(255 0 0)); }
-.spotify { background: linear-gradient(to bottom, rgb(8 133 19), rgb(0 255 8)); }
-.sound-cloud { background: linear-gradient(to bottom, #bb4c09, rgb(255 47 0)); }
-
-.hidden-redirect 
-{
-    position: absolute;
-    display: block;
-    width: fit-content;
-    width: 120px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    left: 50%;
-    transform: translate(-50%);
-    animation: Slideup4 ease-in 1s;
 }
 .nav-top
 {

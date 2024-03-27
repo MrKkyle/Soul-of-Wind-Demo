@@ -42,12 +42,12 @@ function Login()
             {
                 message.innerHTML = "";
                 message.style.backgroundColor = "transparent";
-                login_form.style.animation = "Fadeout ease-out 1s";
+                login_form.style.animation = "FadeOut ease-out 1s";
                 setTimeout(() => 
                 { 
                     window.location.href = '/redirect'; login_form.style.display = "none";
                     video.style.filter = "blur(0px)";
-                }, 1200);
+                }, 1500);
             }, 500);
             
         })

@@ -34,13 +34,6 @@ function Redirect()
         });
         */
 
-        //Scripts for the redirect onclicks
-        let sow = document.querySelector(".sow");
-        let wsm = document.querySelector(".wsm");
-
-        sow.addEventListener("click", () => { window.location.href = "/soul-of-wind" });
-        wsm.addEventListener("click", () => { window.location.href = "/winds-soul-melody" });
-
         //Scripts for the Slide change effect 
         let pages = document.querySelectorAll(".page");
         const translateAmount = 100; 
@@ -63,10 +56,10 @@ function Redirect()
         let prev2 = document.getElementById("prev2"); let next2 = document.getElementById("next2");
 
         //Configure the navbars initially
+        navbar_bottom[0].style.animation = "none"; navbar_top[0].style.animation = "none";
+        navbar_bottom[0].style.display = "none"; navbar_top[0].style.display = "none";
         navbar_bottom[1].style.animation = "none"; navbar_top[1].style.animation = "none";
         navbar_bottom[1].style.display = "none"; navbar_top[1].style.display = "none";
-        navbar_bottom[2].style.animation = "none"; navbar_top[2].style.animation = "none";
-        navbar_bottom[2].style.display = "none"; navbar_top[2].style.display = "none";
 
         //Page 1
         prev.addEventListener("click", () => 
@@ -79,8 +72,7 @@ function Redirect()
             //configure the slide's fadeIn
             redirect_title[1].style.display = "none"; 
             setTimeout(() => {redirect_title[0].style.display = "block";}, 1200);
-            navbar_top[1].style.animation = "none"; navbar_bottom[1].style.animation = "none";
-            navbar_top[0].style.animation = "Slide_down ease-in 1s"; navbar_bottom[0].style.animation = "Slide_up ease-in 1s";
+            navbar_top[0].style.animation = "none"; navbar_bottom[0].style.animation = "none";
         });
 
         //Page2
@@ -94,10 +86,9 @@ function Redirect()
 
             //configure the slide's fadeIn
             redirect_title[0].style.display = "none";  
-            navbar_bottom[1].style.display = "block"; navbar_top[1].style.display = "block";
+            navbar_bottom[0].style.display = "block"; navbar_top[0].style.display = "block";
             setTimeout(() => {redirect_title[1].style.display = "block";}, 1200);
-            navbar_top[0].style.animation = "none"; navbar_bottom[0].style.animation = "none";
-            navbar_top[1].style.animation = "Slide_down ease-in 1s"; navbar_bottom[1].style.animation = "Slide_up ease-in 1s";
+            navbar_top[0].style.animation = "Slide_down ease-in 1s"; navbar_bottom[0].style.animation = "Slide_up ease-in 1s";
         });
         next2.addEventListener("click", () => 
         { 
@@ -108,10 +99,10 @@ function Redirect()
 
             //configure the slide's fadeIn
             redirect_title[1].style.display = "none";  
-            navbar_bottom[2].style.display = "block"; navbar_top[2].style.display = "block";
+            navbar_bottom[1].style.display = "block"; navbar_top[1].style.display = "block";
             setTimeout(() => {redirect_title[2].style.display = "block";}, 1200);
-            navbar_top[1].style.animation = "none"; navbar_bottom[1].style.animation = "none";
-            navbar_top[2].style.animation = "Slide_down ease-in 1s"; navbar_bottom[2].style.animation = "Slide_up ease-in 1s";
+            navbar_top[0].style.animation = "none"; navbar_bottom[0].style.animation = "none";
+            navbar_top[1].style.animation = "Slide_down ease-in 1s"; navbar_bottom[1].style.animation = "Slide_up ease-in 1s";
         });
         prev2.addEventListener("click", () => 
         { 
@@ -123,8 +114,23 @@ function Redirect()
             //configure the slide's fadeIn
             redirect_title[2].style.display = "none"; 
             setTimeout(() => {redirect_title[1].style.display = "block";}, 1200);
-            navbar_top[2].style.animation = "none"; navbar_bottom[2].style.animation = "none";
-            navbar_top[1].style.animation = "Slide_down ease-in 1s"; navbar_bottom[1].style.animation = "Slide_up ease-in 1s";
+            navbar_top[1].style.animation = "none"; navbar_bottom[1].style.animation = "none";
+            navbar_top[0].style.animation = "Slide_down ease-in 1s"; navbar_bottom[0].style.animation = "Slide_up ease-in 1s";
+        });
+
+        //Scripts for the redirect onclicks
+        let sow = document.querySelector(".sow");
+        let wsm = document.querySelector(".wsm");
+
+        sow.addEventListener("click", () => 
+        { 
+            setTimeout(() => { window.location.href = "/soul-of-wind"; navbar_bottom[1].style.display = "none"; navbar_top[1].style.display = "none"; prev2.style.display = "none"; }, 1000); 
+            navbar_bottom[1].style.animation = "FadeOut ease-out 1s"; prev2.style.animation = "FadeOut ease-out 1s"; navbar_top[1].style.animation = "FadeOut ease-out 1s"; redirect_title[1].style.display = "none";
+        });
+        wsm.addEventListener("click", () => 
+        { 
+            navbar_top[0].style.animation = "FadeOut ease-out 1s"; navbar_bottom[0].style.animation = "FadeOut ease-out 1s"; next2.style.animation = "FadeOut ease-out 1s"; prev.style.animation = "FadeOut ease-out 1s"; redirect_title[0].style.display = "none";
+            setTimeout(() => { window.location.href = "/winds-soul-melody"; navbar_bottom[0].style.display = "none";  next2.style.display = "none"; prev.style.display = "none"; navbar_top[0].style.display = "none";}, 1000); 
         });
 
     }, []);
@@ -138,9 +144,7 @@ function Redirect()
                         <Slideshow2 container_style = "fixed" Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
                         Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10}
                         Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief"/> 
-                        <div className = "nav-top"></div>
                         <div className = "redirect-title">HOMEPAGE</div>
-                        <div className = "nav-bottom"></div>
                         <button className = "next" style={{left: '45%'}} id = "next">❯</button>
                     </div>
                     <div className="page two">
