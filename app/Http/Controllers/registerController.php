@@ -23,7 +23,6 @@ class registerController extends Controller
         $user_passord = 'rewrite';
         $database_name = 'api_database';
 
-
         /* connection and query */
         $conn = mysqli_connect($db_host, $database_user, $user_passord, $database_name);
         if ($conn->connect_error) { die("PHP failed to access MySQL: " . $conn->connect_error); }

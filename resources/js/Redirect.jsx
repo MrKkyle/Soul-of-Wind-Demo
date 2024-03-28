@@ -151,7 +151,7 @@ function Redirect()
                         <Slideshow2 container_style = "fixed" Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
                         Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10}
                         Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief"/> 
-                        <div className = "modal1" style={{backgroundColor: 'rgba(0, 0, 0, 0.92)', zIndex:'10'}}><div className = "redirect-title" style={{color: 'white', fontSize: '60px'}}>HOMEPAGE</div></div>
+                        <div className = "modal1" style={{backgroundColor: 'rgba(0, 0, 0, 0.92)', zIndex:'10'}}><div className = "redirect-title" style={{color: 'white', fontSize: '60px', top:'44%', left:'34%'}}>HOMEPAGE</div></div>
                         <button className = "next" style={{left: '45%'}} id = "next">❯</button>
                     </div>
                     <div className="page two">
