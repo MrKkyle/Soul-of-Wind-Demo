@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +12,7 @@ class registerController extends Controller
 
    public function register(Request $request)
    {
+        
         session_start();
         //User credentials from form submission
         $user = $request['register_username'];
@@ -37,7 +40,14 @@ class registerController extends Controller
             $result = array("username"=>$user, "key"=>$key, "Status"=>"register-false");
             return response()->json($result);
         }
-        
+        /*
+
+        $users = DB::select('select * from api_credentials');
+ 
+        return view('register', [$users]);
+        //return response()->json(['register', $users]);
+
+        */
         
    }
 }

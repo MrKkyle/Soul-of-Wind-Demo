@@ -45,9 +45,9 @@ body
 }
 #slides .slide .title .title-text 
 {
-        display: block;
-        transform: translateY(1.2em);
-        transition: transform 1s ease-in-out; 
+    display: block;
+    transform: translateY(1.2em);
+    transition: transform 1s ease-in-out; 
 }
 #slides .slide .slide-partial 
 {

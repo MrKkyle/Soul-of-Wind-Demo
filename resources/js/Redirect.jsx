@@ -12,12 +12,19 @@ import image7 from '../media/Slideshow/image_part_081.png'; import image8 from '
 import image9 from '../media/Slideshow/image_part_051.png'; import image10 from '../media/Slideshow/image_part_052.png';
 
 import '../css/main.css';
-
 function Redirect() 
 {
 
     useEffect(() => 
     {
+
+        let navbar_top = document.querySelectorAll(".nav-top"); let navbar_bottom = document.querySelectorAll(".nav-bottom");
+        let prev = document.getElementById("prev"); let next = document.getElementById("next");
+        let prev2 = document.getElementById("prev2"); let next2 = document.getElementById("next2");
+        let redirect_title = document.querySelectorAll(".redirect-title");
+        let pages = document.querySelectorAll(".page");
+        let sow = document.querySelector(".sow"); let wsm = document.querySelector(".wsm");
+        let modal = document.querySelector(".modal1");
         /*
         const mask = document.querySelector('.mask');
 
@@ -34,8 +41,15 @@ function Redirect()
         });
         */
 
+        //Scripts for the homepage
+        redirect_title[0].style.top = "50%"; redirect_title[0].style.left = "50%";
+        setTimeout(() => 
+        {
+            modal.style.animation = "FadeOut ease-out 1s";
+            setTimeout(() => {modal.style.display = "none";}, 900);
+        }, 3000);
+
         //Scripts for the Slide change effect 
-        let pages = document.querySelectorAll(".page");
         const translateAmount = 100; 
         let translate = 0;
         function slide(direction)
@@ -48,12 +62,8 @@ function Redirect()
         }
 
         /* Onclicks for the pages buttons */
-        let redirect_title = document.querySelectorAll(".redirect-title");
         setTimeout(() => {redirect_title[0].style.display = "block"; }, 1500);
         
-        let navbar_top = document.querySelectorAll(".nav-top"); let navbar_bottom = document.querySelectorAll(".nav-bottom");
-        let prev = document.getElementById("prev"); let next = document.getElementById("next");
-        let prev2 = document.getElementById("prev2"); let next2 = document.getElementById("next2");
 
         //Configure the navbars initially
         navbar_bottom[0].style.animation = "none"; navbar_top[0].style.animation = "none";
@@ -119,9 +129,6 @@ function Redirect()
         });
 
         //Scripts for the redirect onclicks
-        let sow = document.querySelector(".sow");
-        let wsm = document.querySelector(".wsm");
-
         sow.addEventListener("click", () => 
         { 
             setTimeout(() => { window.location.href = "/soul-of-wind"; navbar_bottom[1].style.display = "none"; navbar_top[1].style.display = "none"; prev2.style.display = "none"; }, 1000); 
@@ -144,25 +151,23 @@ function Redirect()
                         <Slideshow2 container_style = "fixed" Image1_left = {image1} Image1_right = {image2} Image2_left = {image3} Image2_right = {image4} Image3_left = {image5} Image3_right = {image6}
                         Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10}
                         Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief"/> 
-                        <div className = "redirect-title">HOMEPAGE</div>
+                        <div className = "modal1" style={{backgroundColor: 'rgba(0, 0, 0, 0.92)', zIndex:'10'}}><div className = "redirect-title" style={{color: 'white', fontSize: '60px'}}>HOMEPAGE</div></div>
                         <button className = "next" style={{left: '45%'}} id = "next">❯</button>
                     </div>
                     <div className="page two">
                         <FallingLeaves /> 
                         <div className = "nav-top"></div>
                         <div className = "nav-bottom"><button className = "hidden-links wsm" style ={{top: '8px', background: 'linear-gradient(to bottom, #5f1162, #171850)'}}>Go</button></div>
-                        <div className = "redirect-title">Winds Soul Melody</div>
+                        <div className = "redirect-title" style ={{top: '1%',left: '35%'}}>Winds Soul Melody</div>
                         <button className = "next" style = {{right: '0px', top: '33%', position: 'absolute'}} id = "next2">❯</button>
                         <button className = "prev" style={{display: 'none', position: 'absolute', top: '33%', left: '0'}} id = "prev">❮</button>
-                        
                     </div>
                     <div className="page three">
                         <SnowEffect />
                         <div className = "nav-top"></div>
                         <div className = "nav-bottom"><button className = "hidden-links sow" style ={{top: '8px', background: 'linear-gradient(to bottom, #132b29c9, #164458e3)'}}>Go</button></div>
-                        <div className = "redirect-title">Soul of Wind</div>
+                        <div className = "redirect-title" style ={{top: '1%',left: '41%'}}>Soul of Wind</div>
                         <button className = "prev" style={{left: '-45%'}} id = "prev2">❮</button>
-                        
                     </div>
                 </div>
             </div>
