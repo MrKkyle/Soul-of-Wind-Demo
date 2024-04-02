@@ -34,3 +34,13 @@ body, html
         backface-visibility: visible;
     }
 }
+.container_alpha
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    animation: FadeIn ease-in 1s;;
+}

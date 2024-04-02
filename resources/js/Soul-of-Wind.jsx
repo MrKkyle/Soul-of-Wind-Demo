@@ -1,6 +1,9 @@
 import React from 'react';
 import {useEffect} from 'react';
+import image from '../media/backgrounds/Screenshot5.png';
+import SnowEffect from './components/Snow-effect';
 import Overlay_Navigation from './components/overlay-navigation';
+import Background5 from './components/Background5';
 import $ from "jquery";
 
 
@@ -44,7 +47,11 @@ function SoulOfWind()
 
     return (
         <>
-            <Overlay_Navigation />         
+            <Overlay_Navigation />  
+            <SnowEffect />       
+            <Background5 background={image} title1="Instruments Ssed" title2="Videos Available" title3="Artists"
+            description1="Instruments used by this artists inclde, and are not limited to:"
+            />    
             
             <button id = "return">Return</button>
             

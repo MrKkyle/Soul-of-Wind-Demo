@@ -137,7 +137,7 @@ function Redirect()
         wsm.addEventListener("click", () => 
         { 
             navbar_top[0].style.animation = "FadeOut ease-out 1s"; navbar_bottom[0].style.animation = "FadeOut ease-out 1s"; next2.style.animation = "FadeOut ease-out 1s"; prev.style.animation = "FadeOut ease-out 1s"; redirect_title[0].style.display = "none";
-            setTimeout(() => { window.location.href = "/winds-soul-melody"; navbar_bottom[0].style.display = "none";  next2.style.display = "none"; prev.style.display = "none"; navbar_top[0].style.display = "none";}, 1000); 
+            setTimeout(() => { window.location.href = "/wind-soul-melody"; navbar_bottom[0].style.display = "none";  next2.style.display = "none"; prev.style.display = "none"; navbar_top[0].style.display = "none";}, 1000); 
         });
 
     }, []);

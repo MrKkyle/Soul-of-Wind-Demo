@@ -1,0 +1,67 @@
+.holders 
+{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.image-banner
+{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+}
+.page-window
+{
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -35%);
+    width: 70%;
+    height: 120%;
+    overflow: auto;
+    animation: FadeIn ease-in 1s;
+    background-color: rgba(240, 248, 255, 0.75);
+    padding: 30px;
+    font-family: system-ui;
+    margin-bottom: 30%;
+    transition-duration: 0.5s;
+    text-align: center;
+    z-index: 5;
+}
+.page-window:hover
+{
+    background-color: rgba(240, 248, 255, 0.931);
+}
+
+.information-block
+{
+    text-align: center;
+    padding:10px;
+}
+
+.information-block:hover 
+{
+    .title 
+    {
+        border-bottom: 1px solid grey;
+    }
+}
+.title 
+{
+    font-size: 17px;
+    font-weight: bold;
+    transition: ease-in;
+    transition-duration: 0.4s;
+    border-bottom: 1px solid transparent;
+}
+.text-description 
+{
+    font-size: 14px;
+}

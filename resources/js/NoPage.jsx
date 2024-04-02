@@ -1,4 +1,5 @@
-/* Used when selected page cannot be found or unavailable */
+import React from 'react';
+import {useEffect} from 'react';
 function NoPage()
 {
   return (
