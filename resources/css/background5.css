@@ -53,15 +53,21 @@
         border-bottom: 1px solid grey;
     }
 }
-.title 
+.title-info 
 {
-    font-size: 17px;
+    font-size: 40px;
     font-weight: bold;
+    width: max-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
     transition: ease-in;
     transition-duration: 0.4s;
     border-bottom: 1px solid transparent;
 }
 .text-description 
 {
+    padding: 10px;
+    margin: 5px;
     font-size: 14px;
 }

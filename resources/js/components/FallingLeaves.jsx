@@ -180,9 +180,7 @@ function FallingLeaves()
     }, []);
 
     return (
-        <div className = "container_alpha">
-            <div className = "falling-leaves"/>
-        </div>
+        <div className = "falling-leaves"/>
     );
 }
 

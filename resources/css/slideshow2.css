@@ -157,7 +157,7 @@ body
     z-index: 1;
     border: none;
     left: 1%;
-    top: 85%;
+    top: 95%;
     transform: translate(0%, -50%);
     text-decoration: none;
 }
@@ -175,8 +175,8 @@ body
     cursor: pointer;
     z-index: 1;
     border: none;
-    left: 1%;
-    top: 79%;
+    left: 5%;
+    top: 95%;
     transform: translate(0%, -50%);
     text-decoration: none;
 }
@@ -194,8 +194,8 @@ body
     cursor: pointer;
     z-index: 1;
     border: none;
-    left: 1%;
-    top: 73%;
+    left: 9%;
+    top: 95%;
     transform: translate(0%, -50%);
     text-decoration: none;
 }

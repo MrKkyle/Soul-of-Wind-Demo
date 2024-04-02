@@ -31,11 +31,13 @@ function SoulOfWind()
 
         let overlay_open = document.getElementById("open"); let overlay_close = document.getElementById("close");
         let open = document.getElementById("open"); let _return = document.getElementById("return");
-        overlay_open.addEventListener("click", () => { open.style.display = "none"; _return.style.display = "none"; });
+        let holder = document.querySelector(".holders");
+
+        overlay_open.addEventListener("click", () => { open.style.display = "none"; _return.style.display = "none"; holder.style.display = "none";});
 
         overlay_close.addEventListener("click", () =>
         {
-            setTimeout(() => { open.style.display = "block"; _return.style.display = "block"; }, 500)
+            setTimeout(() => { open.style.display = "block"; _return.style.display = "block"; holder.style.display = "block";}, 500)
         });
 
         _return.addEventListener("click", () =>
@@ -49,7 +51,7 @@ function SoulOfWind()
         <>
             <Overlay_Navigation />  
             <SnowEffect />       
-            <Background5 background={image} title1="Instruments Ssed" title2="Videos Available" title3="Artists"
+            <Background5 background={image} title1="Instruments Used" title2="Videos Available" title3="Artists"
             description1="Instruments used by this artists inclde, and are not limited to:"
             />    
             
@@ -60,9 +62,3 @@ function SoulOfWind()
 }
 
 export default SoulOfWind;
-
-/*
-            <a href = "https://www.youtube.com/channel/UCUZNK80DemBN3kyxusDLwrA" target = "_blank" className = "youtube"><i className = "icon yt"></i><div className = "txt">Youtube</div></a>
-            <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
-            <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
-*/

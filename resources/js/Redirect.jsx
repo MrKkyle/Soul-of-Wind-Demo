@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from "react";
-import Background from "./components/Background";
 import FallingLeaves from './components/FallingLeaves';
 import SnowEffect from './components/Snow-effect';
 import Slideshow2 from './components/Slideshow2';
@@ -152,7 +151,10 @@ function Redirect()
                         Image4_left = {image7} Image4_right = {image8} Image5_left = {image9} Image5_right = {image10}
                         Text1 = "Relaxing Piano" Text2 = "Rain Sounds" Text3 = "Cures Anxiety" Text4 = "Peaceful Music" Text5 = "Insomnia Relief"/> 
                         <div className = "modal1" style={{backgroundColor: 'rgba(0, 0, 0, 0.92)', zIndex:'10'}}><div className = "redirect-title" style={{color: 'white', fontSize: '60px', top:'44%', left:'34%'}}>HOMEPAGE</div></div>
-                        <button className = "next" style={{left: '45%'}} id = "next">❯</button>
+                        <button className = "next" style={{left: '47%'}} id = "next">❯</button>
+                        <a href = "https://www.youtube.com/channel/UCUZNK80DemBN3kyxusDLwrA" target = "_blank" className = "youtube"><i className = "icon yt"></i><div className = "txt">Youtube</div></a>
+                        <a href = "https://open.spotify.com/artist/7r0YQP2my9HQPBOx1Gnn6X" target = "_blank" className = "spotify"><i className = "icon sp"></i><div className = "txt">Spotify</div></a>
+                        <a href = "https://soundcloud.com/thesoulofwind1" target = "_blank" className = "sound-cloud"><i className = "icon sc"></i><div className = "txt">Sound Cloud</div></a>
                     </div>
                     <div className="page two">
                         <FallingLeaves /> 
@@ -167,7 +169,7 @@ function Redirect()
                         <div className = "nav-top"></div>
                         <div className = "nav-bottom"><button className = "hidden-links sow" style ={{top: '8px', background: 'linear-gradient(to bottom, #132b29c9, #164458e3)'}}>Go</button></div>
                         <div className = "redirect-title" style ={{top: '1%',left: '41%'}}>Soul of Wind</div>
-                        <button className = "prev" style={{left: '-45%'}} id = "prev2">❮</button>
+                        <button className = "prev" style={{left: '-47%'}} id = "prev2">❮</button>
                     </div>
                 </div>
             </div>

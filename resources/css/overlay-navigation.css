@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgba(0,0,0, 0.7);
     overflow-y: hidden;
     transition: 0.5s;
 }
@@ -43,6 +43,7 @@
     right: 45px;
     font-size: 60px;
     cursor: pointer;
+    z-index: 6;
 }
 
 @media screen and (max-height: 450px) 
@@ -59,7 +60,7 @@
 #open
 {
     position: absolute;
-    top: 5px;
+    top: 50px;
     left: 5px;
     z-index: 5;
     height: auto;
