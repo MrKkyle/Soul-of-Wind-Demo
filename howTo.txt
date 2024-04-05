@@ -63,6 +63,7 @@ mix.styles([
 ## How to setup project with docker(recommended)
 - Install React.js in the current directory of the project(already done, just need to run npm install)
 - Install Laravel in the current directory of the project: Guide => https://kinsta.com/knowledgebase/install-laravel/
+- Copy the node modules of soul of wind
 
 - Go to the app's .env file and edit the APP_URL=localhost
 - Go to the vite.config.js file in the root directory and add these lines above the plugins:

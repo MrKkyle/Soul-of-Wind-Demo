@@ -56,9 +56,7 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - SOW-network
-    depends_on:
-      - app  
+      - SOW-network 
 
 volumes:
     laravel-volume:
