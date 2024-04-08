@@ -12,6 +12,7 @@ services:
     working_dir: /var/www/
     volumes:
       - ./:/var/www 
+      - /var/www/vendor
     networks:
       - SOW-network
     depends_on:
@@ -46,6 +47,7 @@ services:
       APP_URL: ${APP_URL}
     volumes:
       - ./:/var/www
+      - /var/www/node_modules
   nginx:
     image: nginx:alpine
     container_name: ${NGINX_CONTAINER_NAME}
