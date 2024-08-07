@@ -4,7 +4,7 @@ import $ from "jquery";
 import '../../css/slideshow2.css';
 
 
-function Slideshow2(props)
+function Slideshow2({container_style, Text1, Text2, Text3, Text4, Text5, Image1_left, Image1_right, Image2_left, Image2_right, Image3_left, Image3_right, Image4_left, Image4_right, Image5_left, Image5_right})
 {
     useEffect(()=> 
     {
@@ -63,32 +63,32 @@ function Slideshow2(props)
 
     return (
     <>
-        <div id="container" style = {{position: props.container_style}}>
+        <div id="container" style = {{position: container_style}}>
             <ul id="slides">
                 <li className="slide">
-                    <div className="slide-partial slide-left"><img src={props.Image1_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Image1_right}/></div>
-                    <h1 className="title"><span className="title-text">{props.Text1}</span></h1>
+                    <div className="slide-partial slide-left"><img src={Image1_left}/></div>
+                    <div className="slide-partial slide-right"><img src={Image1_right}/></div>
+                    <h1 className="title"><span className="title-text">{Text1}</span></h1>
                 </li>
                     <li className="slide">
-                    <div className="slide-partial slide-left"><img src={props.Image2_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Image2_right}/></div>
-                    <h1 className="title"><span className="title-text">{props.Text2}</span></h1>
+                    <div className="slide-partial slide-left"><img src={Image2_left}/></div>
+                    <div className="slide-partial slide-right"><img src={Image2_right}/></div>
+                    <h1 className="title"><span className="title-text">{Text2}</span></h1>
                 </li>
                 <li className="slide">
-                    <div className="slide-partial slide-left"><img src={props.Image3_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Image3_right}/></div>
-                    <h1 className="title"><span className="title-text">{props.Text3}</span></h1>
+                    <div className="slide-partial slide-left"><img src={Image3_left}/></div>
+                    <div className="slide-partial slide-right"><img src={Image3_right}/></div>
+                    <h1 className="title"><span className="title-text">{Text3}</span></h1>
                 </li>
                 <li className="slide">
-                    <div className="slide-partial slide-left"><img src={props.Image4_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Image4_right}/></div>
-                    <h1 className="title"><span className="title-text">{props.Text4}</span></h1>
+                    <div className="slide-partial slide-left"><img src={Image4_left}/></div>
+                    <div className="slide-partial slide-right"><img src={Image4_right}/></div>
+                    <h1 className="title"><span className="title-text">{Text4}</span></h1>
                 </li>
                 <li className="slide">
-                    <div className="slide-partial slide-left"><img src={props.Image5_left}/></div>
-                    <div className="slide-partial slide-right"><img src={props.Image5_right}/></div>
-                    <h1 className="title"><span className="title-text">{props.Text5}</span></h1>
+                    <div className="slide-partial slide-left"><img src={Image5_left}/></div>
+                    <div className="slide-partial slide-right"><img src={Image5_right}/></div>
+                    <h1 className="title"><span className="title-text">{Text5}</span></h1>
                 </li>
             </ul>
             <ul id="slide-select" style = {{display: 'none'}}>

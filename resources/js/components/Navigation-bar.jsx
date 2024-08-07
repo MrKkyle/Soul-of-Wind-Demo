@@ -12,7 +12,7 @@ import NoPage from '../NoPage';
 
 // Import Style sheet below
 import '../../css/navigation-bar.css';
-function Navigation_Bar(props)
+function Navigation_Bar({Display})
 {
     useEffect(()=> 
     {
@@ -20,7 +20,7 @@ function Navigation_Bar(props)
     }, []);
 
     return (
-        <div id = "navigation" style = {{display: props.Display}}>
+        <div id = "navigation" style = {{display: Display}}>
             <BrowserRouter>
                 <Routes>
                     <Route path = "/">

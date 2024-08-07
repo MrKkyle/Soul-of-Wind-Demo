@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 
 
 //Insert your navigations 
-function Overlay_Navigation(props)
+function Overlay_Navigation({location1, location2, location3, location4})
 {
     const navigate = useNavigate();
     
@@ -60,10 +60,10 @@ function Overlay_Navigation(props)
             <a id = "close" className = "closebtn">&times;</a>
 
             <div className = "overlay-content">
-                <a href = "#">{props.location1}</a>
-                <a href = "#">{props.location2}</a>
-                <a href = "#">{props.location3}</a>
-                <a href = "#">{props.location4}</a>
+                <a href = "#">{location1}</a>
+                <a href = "#">{location2}</a>
+                <a href = "#">{location3}</a>
+                <a href = "#">{location4}</a>
             </div>
         </div>
         <button id = "open">Open</button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from "react";
 import '../../css/background.css';
 
-function Background(props)
+function Background({background})
 {
     useEffect(() => 
     {
@@ -63,7 +63,7 @@ function Background(props)
 
     return (
         <>
-            <div className = "background" id = "background" style = {{backgroundImage: `url(${props.background})`}}></div>
+            <div className = "background" id = "background" style = {{backgroundImage: `url(${background})`}}></div>
         </>
     );
 }
