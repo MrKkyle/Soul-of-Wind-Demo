@@ -37,7 +37,5 @@ function Background5({background, title1, title2, title3, description1, descript
     );
 
 }
-Background5.defaultProps = {
-    background: '',
-}
+
 export default Background5; 

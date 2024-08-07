@@ -72,11 +72,4 @@ function Overlay_Navigation({location1, location2, location3, location4})
     )  
 }
 
-Overlay_Navigation.defaultProps = 
-{
-    location1: "loc 1",
-    location2: "loc 2",
-    location3: "loc 3",
-    location4: "loc 4"
-}
 export default Overlay_Navigation;

@@ -6,6 +6,7 @@ import '../../css/slideshow2.css';
 
 function Slideshow2({container_style, Text1, Text2, Text3, Text4, Text5, Image1_left, Image1_right, Image2_left, Image2_right, Image3_left, Image3_right, Image4_left, Image4_right, Image5_left, Image5_right})
 {
+    container_style = 'absolute',
     useEffect(()=> 
     {
         let $slides, interval, $selectors, $btns, currentIndex, nextIndex;
